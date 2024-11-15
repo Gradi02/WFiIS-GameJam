@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<RuleDefinitionCollection>
+
+	<!--Component-->
+
+	<!--
+	//**-
+	both string and type, we can do both since their triggers are different
+	string sadece düzde var, child parent ta yok
+	
+	GetComponent(string type)
+	No need to define GetComponent(String type) for now, GetComponent(Type type) overrides it by default
+	
+	-->
+	
+	<!--
+	//**-
+	gameobj.AddComponent
+	-->
+	
+	<!--
+	Suffix="%Name%"
+	-->
+	
+	<!--Type=Component-->
+
+	<RuleDefinition Category="Component" Type="UnityEngine.Component" Method="GetComponent" Kind="String" Value="%Components%" Target="UnityEngine.MonoBehaviour" Argument="type" />
+	<RuleDefinition Category="Component" Type="UnityEngine.Component" Method="GetComponent" Kind="Type" Value="%Components%" Target="UnityEngine.MonoBehaviour" Argument="type" Format="typeof({0})" />
+	<RuleDefinition Category="Component" Type="UnityEngine.Component" Method="GetComponents" Kind="Type" Value="%Components%" Target="UnityEngine.MonoBehaviour" Argument="type" Format="typeof({0})" />
+	<RuleDefinition Category="Component" Type="UnityEngine.Component" Method="TryGetComponent" Kind="Type" Value="%Components%" Target="UnityEngine.MonoBehaviour" Argument="type" Format="typeof({0})" />
+	<RuleDefinition Category="Component" Type="UnityEngine.Component" Method="GetComponent" Kind="TypeArgument" Value="%Components%" Target="UnityEngine.MonoBehaviour" />
+	<RuleDefinition Category="Component" Type="UnityEngine.Component" Method="GetComponents" Kind="TypeArgument" Value="%Components%" Target="UnityEngine.MonoBehaviour" />
+	<RuleDefinition Category="Component" Type="UnityEngine.Component" Method="TryGetComponent" Kind="TypeArgument" Value="%Components%" Target="UnityEngine.MonoBehaviour" />
+
+	<RuleDefinition Category="Component" Type="UnityEngine.Component" Method="GetComponentInChildren" Kind="Type" Value="%Components%;%ChildrenComponents%" Target="UnityEngine.MonoBehaviour" Argument="t" Format="typeof({0})" />
+	<RuleDefinition Category="Component" Type="UnityEngine.Component" Method="GetComponentsInChildren" Kind="Type" Value="%Components%;%ChildrenComponents%" Target="UnityEngine.MonoBehaviour" Argument="t" Format="typeof({0})" />
+	<RuleDefinition Category="Component" Type="UnityEngine.Component" Method="GetComponentInChildren" Kind="TypeArgument" Value="%Components%;%ChildrenComponents%" Target="UnityEngine.MonoBehaviour" />
+	<RuleDefinition Category="Component" Type="UnityEngine.Component" Method="GetComponentsInChildren" Kind="TypeArgument" Value="%Components%;%ChildrenComponents%" Target="UnityEngine.MonoBehaviour" />
+
+	<RuleDefinition Category="Component" Type="UnityEngine.Component" Method="GetComponentInParent" Kind="Type" Value="%Components%;%ParentComponents%" Target="UnityEngine.MonoBehaviour" Argument="t" Format="typeof({0})" />
+	<RuleDefinition Category="Component" Type="UnityEngine.Component" Method="GetComponentsInParent" Kind="Type" Value="%Components%;%ParentComponents%" Target="UnityEngine.MonoBehaviour" Argument="t" Format="typeof({0})" />
+	<RuleDefinition Category="Component" Type="UnityEngine.Component" Method="GetComponentInParent" Kind="TypeArgument" Value="%Components%;%ParentComponents%" Target="UnityEngine.MonoBehaviour" />
+	<RuleDefinition Category="Component" Type="UnityEngine.Component" Method="GetComponentsInParent" Kind="TypeArgument" Value="%Components%;%ParentComponents%" Target="UnityEngine.MonoBehaviour" />
+
+	
+	
+	<!--Type=GameObject-->
+
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="GetComponent" Kind="String" Value="%Components%" Target="UnityEngine.MonoBehaviour" Argument="type" />
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="GetComponent" Kind="Type" Value="%Components%" Target="UnityEngine.MonoBehaviour" Argument="type" Format="typeof({0})" />
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="GetComponents" Kind="Type" Value="%Components%" Target="UnityEngine.MonoBehaviour" Argument="type" Format="typeof({0})" />
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="TryGetComponent" Kind="Type" Value="%Components%" Target="UnityEngine.MonoBehaviour" Argument="type" Format="typeof({0})" />
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="GetComponent" Kind="TypeArgument" Value="%Components%" Target="UnityEngine.MonoBehaviour" />
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="GetComponents" Kind="TypeArgument" Value="%Components%" Target="UnityEngine.MonoBehaviour" />
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="TryGetComponent" Kind="TypeArgument" Value="%Components%" Target="UnityEngine.MonoBehaviour" />
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="GetComponentAtIndex" Kind="TypeArgument" Value="%Components%" Target="UnityEngine.MonoBehaviour" />
+
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="GetComponentInChildren" Kind="Type" Value="%Components%;%ChildrenComponents%" Target="UnityEngine.MonoBehaviour" Argument="type" Format="typeof({0})" />
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="GetComponentsInChildren" Kind="Type" Value="%Components%;%ChildrenComponents%" Target="UnityEngine.MonoBehaviour" Argument="type" Format="typeof({0})" />
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="GetComponentInChildren" Kind="TypeArgument" Value="%Components%;%ChildrenComponents%" Target="UnityEngine.MonoBehaviour" />
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="GetComponentsInChildren" Kind="TypeArgument" Value="%Components%;%ChildrenComponents%" Target="UnityEngine.MonoBehaviour" />
+
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="GetComponentInParent" Kind="Type" Value="%Components%;%ParentComponents%" Target="UnityEngine.MonoBehaviour" Argument="type" Format="typeof({0})" />
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="GetComponentsInParent" Kind="Type" Value="%Components%;%ParentComponents%" Target="UnityEngine.MonoBehaviour" Argument="type" Format="typeof({0})" />
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="GetComponentInParent" Kind="TypeArgument" Value="%Components%;%ParentComponents%" Target="UnityEngine.MonoBehaviour" />
+	<RuleDefinition Category="Component" Type="UnityEngine.GameObject" Method="GetComponentsInParent" Kind="TypeArgument" Value="%Components%;%ParentComponents%" Target="UnityEngine.MonoBehaviour" />
+
+	
+	
+	<!--Others-->
+	<RuleDefinition Category="Component" Type="UnityEditor.Animations.GameObjectRecorder" Method="BindComponent" Kind="TypeArgument" Value="%Components%" Target="UnityEngine.MonoBehaviour" />
+	<RuleDefinition Category="Component" Type="UnityEditor.Animations.GameObjectRecorder" Method="BindComponent" Kind="Type" Value="%Components%" Target="UnityEngine.MonoBehaviour" Argument="componentType" ArgumentIndex="1"/>
+	<RuleDefinition Category="Component" Type="UnityEditor.Animations.GameObjectRecorder" Method="BindComponentsOfType" Kind="TypeArgument" Value="%Components%" Target="UnityEngine.MonoBehaviour" />
+	<RuleDefinition Category="Component" Type="UnityEditor.Animations.GameObjectRecorder" Method="BindComponentsOfType" Kind="Type" Value="%Components%" Target="UnityEngine.MonoBehaviour" Argument="componentType" ArgumentIndex="1"/>
+
+
+</RuleDefinitionCollection>

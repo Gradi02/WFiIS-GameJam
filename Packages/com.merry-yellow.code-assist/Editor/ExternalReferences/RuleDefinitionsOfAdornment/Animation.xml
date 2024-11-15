@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<RuleDefinitionCollection>
+
+
+	<RuleDefinition Category="Animation" Type="UnityEngine.AnimatorControllerParameter" Property="nameHash" Kind="Numeric" Value="%AnimationParameterHashes%" Suffix="%AnimationParameters%" Target="UnityEngine.MonoBehaviour" Popup="List"/>
+	<RuleDefinition Category="Animation" Type="UnityEditor.Animations.AnimatorControllerLayer" Property="syncedLayerIndex" Kind="Numeric" Value="%AnimationLayerIndexNull%;%AnimationLayerIndices%" Suffix="%AnimationLayerNull%;%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Popup="List"/>
+	<RuleDefinition Category="Animation" Type="UnityEditor.Animations.AnimatorState" Property="nameHash" Kind="Numeric" Value="%AnimationStateHashes%" Suffix="%AnimationStates%" Target="UnityEngine.MonoBehaviour" Popup="List"/>
+	<RuleDefinition Category="Animation" Type="UnityEditor.Animations.StateMachineBehaviourContext" Field="layerIndex" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Popup="List"/>
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimationLayerMixerPlayable" Method="IsLayerAdditive" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimationLayerMixerPlayable" Method="SetLayerAdditive" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimationLayerMixerPlayable" Method="SetLayerMaskFromAvatarMask" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List"/>
+
+	<RuleDefinition Category="Animation" Type="UnityEngine.HumanTrait" Method="BoneFromMuscle" Kind="Numeric" Value="$AnimationHumanMuscleIndices" Suffix="$AnimationHumanMuscles" Argument="i" Popup="List" LazyLoad="AnimationHuman" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.HumanTrait" Method="GetBoneDefaultHierarchyMass" Kind="Numeric" Value="$AnimationHumanBoneIndices" Suffix="$AnimationHumanBones" Argument="i" Popup="List" LazyLoad="AnimationHuman" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.HumanTrait" Method="GetMuscleDefaultMax" Kind="Numeric" Value="$AnimationHumanMuscleIndices" Suffix="$AnimationHumanMuscles" Argument="i" Popup="List" LazyLoad="AnimationHuman" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.HumanTrait" Method="GetMuscleDefaultMin" Kind="Numeric" Value="$AnimationHumanMuscleIndices" Suffix="$AnimationHumanMuscles" Argument="i" Popup="List" LazyLoad="AnimationHuman" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.HumanTrait" Method="GetParentBone" Kind="Numeric" Value="$AnimationHumanBoneIndices" Suffix="$AnimationHumanBones" Argument="i" Popup="List" LazyLoad="AnimationHuman" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.HumanTrait" Method="MuscleFromBone" Kind="Numeric" Value="$AnimationHumanBoneIndices" Suffix="$AnimationHumanBones" Argument="i" Popup="List" LazyLoad="AnimationHuman" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.HumanTrait" Method="RequiredBone" Kind="Numeric" Value="$AnimationHumanBoneIndices" Suffix="$AnimationHumanBones" Argument="i" Popup="List" LazyLoad="AnimationHuman" />
+
+
+
+	<RuleDefinition Category="Animation" Type="UnityEngine.AnimatorTransitionInfo" Property="fullPathHash" Kind="Numeric" Value="%AnimationTransitionFullPathHashes%" Suffix="%AnimationTransitionFullPaths%" Target="UnityEngine.MonoBehaviour" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.AnimatorTransitionInfo" Property="nameHash" Kind="Numeric" Value="%AnimationTransitionHashes%" Suffix="%AnimationTransitions%" Target="UnityEngine.MonoBehaviour" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.AnimatorTransitionInfo" Property="userNameHash" Kind="Numeric" Value="%AnimationTransitionUserNameHashes%" Suffix="%AnimationTransitionUserNames%" Target="UnityEngine.MonoBehaviour" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.AnimatorStateInfo" Property="fullPathHash" Kind="Numeric" Value="%AnimationStateFullPathHashes%" Suffix="%AnimationStateFullPaths%" Target="UnityEngine.MonoBehaviour" Popup="List" />
+	<!-- not implemented because didnt want to add cpu and memory for obsolote features
+	<RuleDefinition Category="Animation" Type="UnityEngine.AnimatorStateInfo" Property="nameHash" Kind="Numeric" Value="%AnimationStatePathHashes%" Suffix="%AnimationStatePaths%" Target="UnityEngine.MonoBehaviour" Popup="List" />
+	-->
+	<RuleDefinition Category="Animation" Type="UnityEngine.AnimatorStateInfo" Property="shortNameHash" Kind="Numeric" Value="%AnimationStateHashes%" Suffix="%AnimationStates%" Target="UnityEngine.MonoBehaviour" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.AnimatorStateInfo" Property="tagHash" Kind="Numeric" Value="%AnimationStateTagHashes%" Suffix="%AnimationStateTags%" Target="UnityEngine.MonoBehaviour" Popup="List" />
+
+
+
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="CrossFade" Kind="Numeric" Value="%AnimationStateHashes%" Suffix="%AnimationStates%" Target="UnityEngine.MonoBehaviour" Argument="stateHashName" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="CrossFadeInFixedTime" Kind="Numeric" Value="%AnimationStateHashes%" Suffix="%AnimationStates%" Target="UnityEngine.MonoBehaviour" Argument="stateHashName" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="Play" Kind="Numeric" Value="%AnimationStateHashes%" Suffix="%AnimationStates%" Target="UnityEngine.MonoBehaviour" Argument="stateNameHash" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="PlayInFixedTime" Kind="Numeric" Value="%AnimationStateHashes%" Suffix="%AnimationStates%" Target="UnityEngine.MonoBehaviour" Argument="stateNameHash" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="CrossFade" Kind="Numeric" Value="%AnimationStateHashes%" Suffix="%AnimationStates%" Target="UnityEngine.MonoBehaviour" Argument="stateNameHash" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="CrossFadeInFixedTime" Kind="Numeric" Value="%AnimationStateHashes%" Suffix="%AnimationStates%" Target="UnityEngine.MonoBehaviour" Argument="stateNameHash" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="Play" Kind="Numeric" Value="%AnimationStateHashes%" Suffix="%AnimationStates%" Target="UnityEngine.MonoBehaviour" Argument="stateNameHash" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="PlayInFixedTime" Kind="Numeric" Value="%AnimationStateHashes%" Suffix="%AnimationStates%" Target="UnityEngine.MonoBehaviour" Argument="stateNameHash" Popup="List" />
+
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="GetAnimatorTransitionInfo" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="GetCurrentAnimatorClipInfo" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="GetCurrentAnimatorClipInfoCount" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="GetCurrentAnimationClipState" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="GetCurrentAnimatorStateInfo" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="GetLayerName" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="GetLayerWeight" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="GetNextAnimatorClipInfo" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="GetNextAnimatorClipInfoCount" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="GetNextAnimationClipState" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="GetNextAnimatorStateInfo" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="HasState" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="IsInTransition" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="SetLayerWeight" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="GetAnimatorTransitionInfo" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="GetCurrentAnimatorClipInfo" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="GetCurrentAnimatorClipInfoCount" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="GetCurrentAnimatorStateInfo" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="GetLayerName" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="GetLayerWeight" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="GetNextAnimatorClipInfo" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="GetNextAnimatorClipInfoCount" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="GetNextAnimatorStateInfo" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="HasState" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="IsInTransition" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="SetLayerWeight" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="layerIndex" Popup="List" />
+
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="GetBool" Kind="Numeric" Value="%AnimationBoolParameterHashes%" Suffix="%AnimationBoolParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="GetFloat" Kind="Numeric" Value="%AnimationFloatParameterHashes%" Suffix="%AnimationFloatParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="GetInteger" Kind="Numeric" Value="%AnimationIntegerParameterHashes%" Suffix="%AnimationIntegerParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="IsParameterControlledByCurve" Kind="Numeric" Value="%AnimationParameterHashes%" Suffix="%AnimationParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="ResetTrigger" Kind="Numeric" Value="%AnimationTriggerParameterHashes%" Suffix="%AnimationTriggerParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="SetBool" Kind="Numeric" Value="%AnimationBoolParameterHashes%" Suffix="%AnimationBoolParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="SetFloat" Kind="Numeric" Value="%AnimationFloatParameterHashes%" Suffix="%AnimationFloatParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="SetInteger" Kind="Numeric" Value="%AnimationIntegerParameterHashes%" Suffix="%AnimationIntegerParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="SetTrigger" Kind="Numeric" Value="%AnimationTriggerParameterHashes%" Suffix="%AnimationTriggerParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="GetBool" Kind="Numeric" Value="%AnimationBoolParameterHashes%" Suffix="%AnimationBoolParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="GetFloat" Kind="Numeric" Value="%AnimationFloatParameterHashes%" Suffix="%AnimationFloatParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="GetInteger" Kind="Numeric" Value="%AnimationIntegerParameterHashes%" Suffix="%AnimationIntegerParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="IsParameterControlledByCurve" Kind="Numeric" Value="%AnimationParameterHashes%" Suffix="%AnimationParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="ResetTrigger" Kind="Numeric" Value="%AnimationTriggerParameterHashes%" Suffix="%AnimationTriggerParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="SetBool" Kind="Numeric" Value="%AnimationBoolParameterHashes%" Suffix="%AnimationBoolParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="SetFloat" Kind="Numeric" Value="%AnimationFloatParameterHashes%" Suffix="%AnimationFloatParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="SetInteger" Kind="Numeric" Value="%AnimationIntegerParameterHashes%" Suffix="%AnimationIntegerParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="SetTrigger" Kind="Numeric" Value="%AnimationTriggerParameterHashes%" Suffix="%AnimationTriggerParameters%" Target="UnityEngine.MonoBehaviour" Argument="id" Popup="List" />
+
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animator" Method="GetParameter" Kind="Numeric" Value="%AnimationParameterIndices%" Suffix="%AnimationParameters%" Target="UnityEngine.MonoBehaviour" Argument="index" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEngine.Animations.AnimatorControllerPlayable" Method="GetParameter" Kind="Numeric" Value="%AnimationParameterIndices%" Suffix="%AnimationParameters%" Target="UnityEngine.MonoBehaviour" Argument="index" Popup="List" />
+
+
+	<RuleDefinition Category="Animation" Type="UnityEditor.Animations.AnimatorController" Method="RemoveLayer" Kind="Numeric" Value="%AnimationLayerIndices%" Suffix="%AnimationLayers%" Target="UnityEngine.MonoBehaviour" Argument="index" Popup="List" />
+	<RuleDefinition Category="Animation" Type="UnityEditor.Animations.AnimatorController" Method="RemoveParameter" Kind="Numeric" Value="%AnimationParameterIndices%" Suffix="%AnimationParameters%" Target="UnityEngine.MonoBehaviour" Argument="index" Popup="List" />
+
+
+
+</RuleDefinitionCollection>

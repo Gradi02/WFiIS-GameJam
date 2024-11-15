@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<RuleDefinitionCollection>
+
+	<!--Layer Numeric-->
+
+	<RuleDefinition Category="Layer" Type="UnityEngine.GameObject" Property="layer" Kind="Numeric" Value="$LayerIndices" Suffix="$Layers" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.RenderParams" Property="layer" Kind="Numeric" Value="$LayerIndices" Suffix="$Layers" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Rendering.BatchFilterSettings" Field="layer" Kind="Numeric" Value="$LayerIndices" Suffix="$Layers" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Rendering.RayTracingMeshInstanceConfig" Field="layer" Kind="Numeric" Value="$LayerIndices" Suffix="$Layers" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Rendering.RayTracingAABBsInstanceConfig" Property="layer" Kind="Numeric" Value="$LayerIndices" Suffix="$Layers" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Rendering.RayTracingGeometryInstanceConfig" Property="layer" Kind="Numeric" Value="$LayerIndices" Suffix="$Layers" />
+	
+	<RuleDefinition Category="Layer" Type="UnityEngine.LayerMask" Method="LayerToName" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" />
+
+	<RuleDefinition Category="Layer" Type="UnityEngine.Graphics" Method="DrawMesh" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="3" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Graphics" Method="DrawMesh" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="4" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Graphics" Method="DrawMeshInstanced" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="7" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Graphics" Method="DrawMeshInstanced" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="8" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Graphics" Method="DrawMeshInstancedIndirect" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="9" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Graphics" Method="DrawProcedural" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="9" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Graphics" Method="DrawProcedural" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="10" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Graphics" Method="DrawProceduralIndirect" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="9" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Graphics" Method="DrawProceduralIndirect" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="10" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Graphics" Method="DrawMeshInstancedProcedural" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="8" />
+
+	<RuleDefinition Category="Layer" Type="UnityEditor.EditorGUI" Method="LayerField" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="1" />
+	<RuleDefinition Category="Layer" Type="UnityEditor.EditorGUI" Method="LayerField" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="2" />
+	<RuleDefinition Category="Layer" Type="UnityEditor.EditorGUILayout" Method="LayerField" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" />
+	<RuleDefinition Category="Layer" Type="UnityEditor.EditorGUILayout" Method="LayerField" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="1" />
+
+	<RuleDefinition Category="Layer" Type="UnityEditor.PhysicsVisualizationSettings" Method="GetShowCollisionLayer" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" />
+	<RuleDefinition Category="Layer" Type="UnityEditor.PhysicsVisualizationSettings" Method="GetShowCollisionLayer" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="1" />
+	<RuleDefinition Category="Layer" Type="UnityEditor.PhysicsVisualizationSettings" Method="SetShowCollisionLayer" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" />
+	<RuleDefinition Category="Layer" Type="UnityEditor.PhysicsVisualizationSettings" Method="SetShowCollisionLayer" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="1" />
+
+	<RuleDefinition Category="Layer" Type="UnityEngine.Rendering.ScriptableCullingParameters" Method="GetLayerCullingDistance" Kind="Numeric" Argument="layerIndex" Value="$LayerIndices" Suffix="$Layers" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Rendering.ScriptableCullingParameters" Method="SetLayerCullingDistance" Kind="Numeric" Argument="layerIndex" Value="$LayerIndices" Suffix="$Layers" />
+
+	<RuleDefinition Category="Layer" Type="UnityEngine.Light" Method="GetLights" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="1"/>
+
+	<RuleDefinition Category="Layer" Type="UnityEngine.Physics2D" Method="GetIgnoreLayerCollision" Kind="Numeric" Argument="layer1" Value="$LayerIndices" Suffix="$Layers" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Physics2D" Method="GetIgnoreLayerCollision" Kind="Numeric" Argument="layer2" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="1" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Physics2D" Method="GetLayerCollisionMask" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Physics2D" Method="SetLayerCollisionMask" Kind="Numeric" Argument="layer" Value="$LayerIndices" Suffix="$Layers" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Physics2D" Method="IgnoreLayerCollision" Kind="Numeric" Argument="layer1" Value="$LayerIndices" Suffix="$Layers" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Physics2D" Method="IgnoreLayerCollision" Kind="Numeric" Argument="layer2" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="1" />
+
+	<RuleDefinition Category="Layer" Type="UnityEngine.Physics" Method="GetIgnoreLayerCollision" Kind="Numeric" Argument="layer1" Value="$LayerIndices" Suffix="$Layers" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Physics" Method="GetIgnoreLayerCollision" Kind="Numeric" Argument="layer2" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="1" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Physics" Method="IgnoreLayerCollision" Kind="Numeric" Argument="layer1" Value="$LayerIndices" Suffix="$Layers" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.Physics" Method="IgnoreLayerCollision" Kind="Numeric" Argument="layer2" Value="$LayerIndices" Suffix="$Layers" ArgumentIndex="1" />
+
+
+
+	<!--Layer String-->
+
+	<RuleDefinition Category="Layer" Type="UnityEngine.LayerMask" Method="NameToLayer" Kind="String" Argument="layerName" Value="$Layers" Suffix="$LayerIndices" />
+	<RuleDefinition Category="Layer" Type="UnityEngine.LayerMask" Method="GetMask" Kind="String" Argument="layerNames" ArgumentIndex="0" ArgumentParams="True" Value="$Layers" Suffix="$LayerIndices" />
+
+</RuleDefinitionCollection>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<RuleDefinitionCollection>
+	
+
+	<RuleDefinition Category="Hierarchy" Type="UnityEngine.Transform" Method="GetChild" Kind="Numeric" Value="%ChildrenIndices%" Suffix="%ChildrenNames%" Target="UnityEngine.MonoBehaviour" Popup="List" Argument="index" />
+	
+	<RuleDefinition Category="Hierarchy" Type="UnityEngine.Transform" Property="parent" Kind="Numeric" Value="%This%" Suffix="%ParentNames%" Target="UnityEngine.MonoBehaviour" />
+
+	
+</RuleDefinitionCollection>
