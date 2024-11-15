@@ -3,18 +3,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool canMove = false;
+    private bool canMove = true;
     public float moveSpeed;
 
     public bool isPlayerOne;
-
-    private float spd;
 
     private bool canDash;
     private bool isDashing = false;
 
     private float dashingPower = 20f;
-    private float dashingTime = 2f;
+    private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
 
 
@@ -26,33 +24,26 @@ public class PlayerMovement : MonoBehaviour
 
     /*TODO
     - Add Dashing upon pressing the Shit key
-    - Add a bool, if the building ability is active, it will switch off any movement
-    - 
     */
 
     void Update()
     {
         if (!canMove) return;
-/*        if(isDashing)
+        if(isDashing)
         {
             return;
-        }*/
+        }
         ProcessInputs();
-        spd = Mathf.Abs(moveDirection.magnitude * moveSpeed);
-/*        if(Input.GetKeyDown(KeyCode.LeftShift) && canDash==true)
-        {
-            StartCoroutine(Dash());
-        }*/
     }
 
     void FixedUpdate()
     {
         if (!canMove) return;
 
-        /*        if (isDashing)
-                {
-                    return;
-                }*/
+        if (isDashing)
+        {
+            return;
+        }
         Move();
     }
 
@@ -63,9 +54,17 @@ public class PlayerMovement : MonoBehaviour
         {
             moveX = Input.GetAxisRaw("HorizontalWSAD");
             moveY = Input.GetAxisRaw("VerticalWSAD");
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                Dash();
+            }
         }
         else
         {
+            if (Input.GetKeyDown(KeyCode.RightShift))
+            {
+               Dash();
+            }
             moveX = Input.GetAxisRaw("HorizontalARROWS");
             moveY = Input.GetAxisRaw("VerticalARROWS");
         }
@@ -78,16 +77,10 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = new Vector2(moveDirection.x*moveSpeed, moveDirection.y*moveSpeed);
     }
 
-/*    private IEnumerator Dash()
+    void Dash()
     {
-        canDash = false;
-        isDashing = true;
-        rb.linearVelocity = new Vector2(transform.localScale.x*dashingPower,0f);
-        yield return new WaitForSeconds(dashingTime);
-        isDashing = false;
-        yield return new WaitForSeconds(dashingCooldown);
-        canDash = true;
-    }*/
+        //moveDirection += (new Vector2(5, 5));
+    }
 
     public void SetMovement(bool en)
     {
