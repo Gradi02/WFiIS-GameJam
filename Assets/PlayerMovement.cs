@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing;
 
     private float dashingPower = 20f;
-    private float dashingTime = 2f;
+    private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
 
 
@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(isDashing)
+        if (isDashing)
         {
             return;
         }
@@ -62,14 +62,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        rb.linearVelocity = new Vector2(moveDirection.x*moveSpeed, moveDirection.y*moveSpeed);
+        rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
 
     private IEnumerator Dash()
     {
         canDash = false;
         isDashing = true;
-        rb.linearVelocity = new Vector2(transform.localScale.x*dashingPower,0f);
+        rb.linearVelocity = new Vector2(0f, transform.localScale.y * dashingPower);
         yield return new WaitForSeconds(dashingTime);
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
