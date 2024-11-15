@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<RuleDefinitionCollection>
+
+	
+	<RuleDefinition Category="Preferences" Type="UnityEngine.PlayerPrefs" Method="DeleteKey" Kind="String" Argument="key" Value="$PlayerPrefKeys" Suffix="$PlayerPrefValues" LazyLoad="PlayerPrefs" />
+
+	<RuleDefinition Category="Preferences" Type="UnityEngine.PlayerPrefs" Method="GetFloat" Kind="String" Argument="key" Value="$PlayerPrefKeys" Suffix="$PlayerPrefValues" LazyLoad="PlayerPrefs" />
+	<RuleDefinition Category="Preferences" Type="UnityEngine.PlayerPrefs" Method="GetInt" Kind="String" Argument="key" Value="$PlayerPrefKeys" Suffix="$PlayerPrefValues" LazyLoad="PlayerPrefs" />
+	<RuleDefinition Category="Preferences" Type="UnityEngine.PlayerPrefs" Method="GetString" Kind="String" Argument="key" Value="$PlayerPrefKeys" Suffix="$PlayerPrefValues" LazyLoad="PlayerPrefs" />
+
+	<RuleDefinition Category="Preferences" Type="UnityEngine.PlayerPrefs" Method="HasKey" Kind="String" Argument="key" Value="$PlayerPrefKeys" Suffix="$PlayerPrefValues" LazyLoad="PlayerPrefs" />
+
+	<RuleDefinition Category="Preferences" Type="UnityEngine.PlayerPrefs" Method="SetFloat" Kind="String" Argument="key" Value="$PlayerPrefKeys" Suffix="$PlayerPrefValues" LazyLoad="PlayerPrefs" />
+	<RuleDefinition Category="Preferences" Type="UnityEngine.PlayerPrefs" Method="SetInt" Kind="String" Argument="key" Value="$PlayerPrefKeys" Suffix="$PlayerPrefValues" LazyLoad="PlayerPrefs" />
+	<RuleDefinition Category="Preferences" Type="UnityEngine.PlayerPrefs" Method="SetString" Kind="String" Argument="key" Value="$PlayerPrefKeys" Suffix="$PlayerPrefValues" LazyLoad="PlayerPrefs" />
+
+
+
+	<RuleDefinition Category="Preferences" Type="UnityEditor.EditorPrefs" Method="DeleteKey" Kind="String" Argument="key" Value="$EditorPrefKeys" Suffix="$EditorPrefValues" LazyLoad="EditorPrefs" />
+
+	<RuleDefinition Category="Preferences" Type="UnityEditor.EditorPrefs" Method="GetBool" Kind="String" Argument="key" Value="$EditorPrefKeys" Suffix="$EditorPrefValues" LazyLoad="EditorPrefs" />
+	<RuleDefinition Category="Preferences" Type="UnityEditor.EditorPrefs" Method="GetFloat" Kind="String" Argument="key" Value="$EditorPrefKeys" Suffix="$EditorPrefValues" LazyLoad="EditorPrefs" />
+	<RuleDefinition Category="Preferences" Type="UnityEditor.EditorPrefs" Method="GetInt" Kind="String" Argument="key" Value="$EditorPrefKeys" Suffix="$EditorPrefValues" LazyLoad="EditorPrefs" />
+	<RuleDefinition Category="Preferences" Type="UnityEditor.EditorPrefs" Method="GetString" Kind="String" Argument="key" Value="$EditorPrefKeys" Suffix="$EditorPrefValues" LazyLoad="EditorPrefs" />
+
+	<RuleDefinition Category="Preferences" Type="UnityEditor.EditorPrefs" Method="HasKey" Kind="String" Argument="key" Value="$EditorPrefKeys" Suffix="$EditorPrefValues" LazyLoad="EditorPrefs" />
+
+	<RuleDefinition Category="Preferences" Type="UnityEditor.EditorPrefs" Method="SetBool" Kind="String" Argument="key" Value="$EditorPrefKeys" Suffix="$EditorPrefValues" LazyLoad="EditorPrefs" />
+	<RuleDefinition Category="Preferences" Type="UnityEditor.EditorPrefs" Method="SetFloat" Kind="String" Argument="key" Value="$EditorPrefKeys" Suffix="$EditorPrefValues" LazyLoad="EditorPrefs" />
+	<RuleDefinition Category="Preferences" Type="UnityEditor.EditorPrefs" Method="SetInt" Kind="String" Argument="key" Value="$EditorPrefKeys" Suffix="$EditorPrefValues" LazyLoad="EditorPrefs" />
+	<RuleDefinition Category="Preferences" Type="UnityEditor.EditorPrefs" Method="SetString" Kind="String" Argument="key" Value="$EditorPrefKeys" Suffix="$EditorPrefValues" LazyLoad="EditorPrefs" />
+
+
+</RuleDefinitionCollection>

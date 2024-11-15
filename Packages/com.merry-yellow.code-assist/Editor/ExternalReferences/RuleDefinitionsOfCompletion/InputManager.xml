@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<RuleDefinitionCollection>
+
+
+	<RuleDefinition Category="InputManager" Type="UnityEngine.Input" Method="GetAxis" Kind="String" Argument="axisName" Value="$InputManagerAxes" Suffix="$InputManagerAxisInfos" />
+	<RuleDefinition Category="InputManager" Type="UnityEngine.Input" Method="GetAxisRaw" Kind="String" Argument="axisName" Value="$InputManagerAxes" Suffix="$InputManagerAxisInfos" />
+	<RuleDefinition Category="InputManager" Type="UnityEngine.UIElements.InputWrapper" Method="GetAxisRaw" Kind="String" Argument="axisName" Value="$InputManagerAxes" Suffix="$InputManagerAxisInfos" />
+
+	<RuleDefinition Category="InputManager" Type="UnityEngine.Input" Method="GetButton" Kind="String" Argument="buttonName" Value="$InputManagerAxes" Suffix="$InputManagerAxisInfos" />
+	<RuleDefinition Category="InputManager" Type="UnityEngine.Input" Method="GetButtonUp" Kind="String" Argument="buttonName" Value="$InputManagerAxes" Suffix="$InputManagerAxisInfos" />
+	<RuleDefinition Category="InputManager" Type="UnityEngine.Input" Method="GetButtonDown" Kind="String" Argument="buttonName" Value="$InputManagerAxes" Suffix="$InputManagerAxisInfos" />
+	<RuleDefinition Category="InputManager" Type="UnityEngine.UIElements.InputWrapper" Method="GetButtonDown" Kind="String" Argument="buttonName" Value="$InputManagerAxes" Suffix="$InputManagerAxisInfos" />
+
+	<RuleDefinition Category="InputManager" Type="UnityEngine.Input" Method="GetKey" Kind="String" Argument="name" Value="$InputManagerKeyNames" Suffix="$InputManagerKeyCodes" />
+	<RuleDefinition Category="InputManager" Type="UnityEngine.Input" Method="GetKeyUp" Kind="String" Argument="name" Value="$InputManagerKeyNames" Suffix="$InputManagerKeyCodes" />
+	<RuleDefinition Category="InputManager" Type="UnityEngine.Input" Method="GetKeyDown" Kind="String" Argument="name" Value="$InputManagerKeyNames" Suffix="$InputManagerKeyCodes" />
+
+	<RuleDefinition Category="InputManager" Type="UnityEngine.Input" Method="GetMouseButton" Kind="Numeric" Argument="button" Value="$InputManagerMouseButtonIndices" Suffix="$InputManagerMouseButtonNames" />
+	<RuleDefinition Category="InputManager" Type="UnityEngine.Input" Method="GetMouseButtonDown" Kind="Numeric" Argument="button" Value="$InputManagerMouseButtonIndices" Suffix="$InputManagerMouseButtonNames" />
+	<RuleDefinition Category="InputManager" Type="UnityEngine.Input" Method="GetMouseButtonUp" Kind="Numeric" Argument="button" Value="$InputManagerMouseButtonIndices" Suffix="$InputManagerMouseButtonNames" />
+	<RuleDefinition Category="InputManager" Type="UnityEngine.UIElements.InputWrapper" Method="GetMouseButton" Kind="Numeric" Argument="button" Value="$InputManagerMouseButtonIndices" Suffix="$InputManagerMouseButtonNames" />
+	<RuleDefinition Category="InputManager" Type="UnityEngine.UIElements.InputWrapper" Method="GetMouseButtonDown" Kind="Numeric" Argument="button" Value="$InputManagerMouseButtonIndices" Suffix="$InputManagerMouseButtonNames" />
+	<RuleDefinition Category="InputManager" Type="UnityEngine.UIElements.InputWrapper" Method="GetMouseButtonUp" Kind="Numeric" Argument="button" Value="$InputManagerMouseButtonIndices" Suffix="$InputManagerMouseButtonNames" />
+
+	<RuleDefinition Category="InputManager" Type="UnityEngine.Input" Method="IsJoystickPreconfigured" Kind="String" Argument="joystickName" Value="$InputManagerJoystickNames" />
+
+
+</RuleDefinitionCollection>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<RuleDefinitionCollection>
+
+	<!--Tag-->
+
+	
+	<RuleDefinition Category="Tag" Type="UnityEngine.GameObject" Property="tag" Kind="String" Value="$Tags" />
+	<RuleDefinition Category="Tag" Type="UnityEngine.GameObject" Method="CompareTag" Kind="String" Argument="tag" Value="$Tags" />
+
+	<RuleDefinition Category="Tag" Type="UnityEngine.Component" Property="tag" Kind="String" Value="$Tags" />
+	<RuleDefinition Category="Tag" Type="UnityEngine.Component" Method="CompareTag" Kind="String" Argument="tag" Value="$Tags" />
+
+	<RuleDefinition Category="Tag" Type="UnityEngine.GameObject" Method="FindWithTag" Kind="String" Argument="tag" Value="$Tags" />
+	<RuleDefinition Category="Tag" Type="UnityEngine.GameObject" Method="FindGameObjectWithTag" Kind="String" Argument="tag" Value="$Tags" />
+	<RuleDefinition Category="Tag" Type="UnityEngine.GameObject" Method="FindGameObjectsWithTag" Kind="String" Argument="tag" Value="$Tags" />
+
+	<RuleDefinition Category="Tag" Type="UnityEditor.EditorGUI" Method="TagField" Kind="String" Argument="tag" Value="$Tags" ArgumentIndex="1" />
+	<RuleDefinition Category="Tag" Type="UnityEditor.EditorGUI" Method="TagField" Kind="String" Argument="tag" Value="$Tags" ArgumentIndex="2" />
+	<RuleDefinition Category="Tag" Type="UnityEditor.EditorGUILayout" Method="TagField" Kind="String" Argument="tag" Value="$Tags" />
+	<RuleDefinition Category="Tag" Type="UnityEditor.EditorGUILayout" Method="TagField" Kind="String" Argument="tag" Value="$Tags" ArgumentIndex="1" />
+
+	<RuleDefinition Category="Tag" Type="UnityEngine.TagHandle" Method="GetExistingTag" Kind="String" Argument="tagName" Value="$Tags" />
+	<RuleDefinition Category="Tag" Type="UnityEngine.SearchService.ObjectSelectorHandlerWithTagsAttribute" Method=".ctor" Kind="String" Argument="tags" Value="$Tags" ArgumentParams="True"/>
+
+</RuleDefinitionCollection>

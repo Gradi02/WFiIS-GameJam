@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<RuleDefinitionCollection>
+
+
+	<RuleDefinition Category="Invoke" Type="UnityEngine.MonoBehaviour" Method="CancelInvoke" Kind="String" Argument="methodName" Value="#ParamlessMethods" Target="UnityEngine.MonoBehaviour"/>
+	<RuleDefinition Category="Invoke" Type="UnityEngine.MonoBehaviour" Method="Invoke" Kind="String" Argument="methodName" Value="#ParamlessMethods" Target="UnityEngine.MonoBehaviour"/>
+	<RuleDefinition Category="Invoke" Type="UnityEngine.MonoBehaviour" Method="InvokeRepeating" Kind="String" Argument="methodName" Value="#ParamlessMethods" Target="UnityEngine.MonoBehaviour"/>
+	<RuleDefinition Category="Invoke" Type="UnityEngine.MonoBehaviour" Method="IsInvoking" Kind="String" Argument="methodName" Value="#ParamlessMethods" Target="UnityEngine.MonoBehaviour"/>
+
+	<RuleDefinition Category="Invoke" Type="UnityEngine.MonoBehaviour" Method="StartCoroutine" Kind="String" Argument="methodName" Value="#Coroutines" Target="UnityEngine.MonoBehaviour"/>
+	<RuleDefinition Category="Invoke" Type="UnityEngine.MonoBehaviour" Method="StopCoroutine" Kind="String" Argument="methodName" Value="#Coroutines" Target="UnityEngine.MonoBehaviour"/>
+
+	<RuleDefinition Category="Invoke" Type="UnityEngine.Component" Method="SendMessage" Kind="String" Argument="methodName" Value="#BroadcastSelf" Target="UnityEngine.MonoBehaviour"/>
+	<RuleDefinition Category="Invoke" Type="UnityEngine.Component" Method="SendMessageUpwards" Kind="String" Argument="methodName" Value="#BroadcastSelf;#BroadcastUpwards" Target="UnityEngine.MonoBehaviour"/>
+	<RuleDefinition Category="Invoke" Type="UnityEngine.Component" Method="BroadcastMessage" Kind="String" Argument="methodName" Value="#BroadcastSelf;#BroadcastDownwards" Target="UnityEngine.MonoBehaviour"/>
+
+	<RuleDefinition Category="Invoke" Type="UnityEngine.GameObject" Method="SendMessage" Kind="String" Argument="methodName" Value="#BroadcastSelf" Target="UnityEngine.MonoBehaviour"/>
+	<RuleDefinition Category="Invoke" Type="UnityEngine.GameObject" Method="SendMessageUpwards" Kind="String" Argument="methodName" Value="#BroadcastSelf;#BroadcastUpwards" Target="UnityEngine.MonoBehaviour"/>
+	<RuleDefinition Category="Invoke" Type="UnityEngine.GameObject" Method="BroadcastMessage" Kind="String" Argument="methodName" Value="#BroadcastSelf;#BroadcastDownwards" Target="UnityEngine.MonoBehaviour"/>
+
+
+</RuleDefinitionCollection>
