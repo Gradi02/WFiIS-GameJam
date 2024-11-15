@@ -8,6 +8,13 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isPlayerOne;
 
+
+
+    public bool table = false;
+    public bool isInvicible = false;
+    
+
+
     private bool canDash;
     private bool isDashing = false;
 
