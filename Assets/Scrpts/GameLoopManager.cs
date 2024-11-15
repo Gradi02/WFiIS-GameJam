@@ -20,6 +20,11 @@ public class GameLoopManager : MonoBehaviour
 
     private GameObject b1, b2;
 
+
+
+    public Canvas BuildCanvas;
+    public Canvas RunCanvas;
+
     //references
     [SerializeField] private PlayerMovement p1, p2;
     [SerializeField] private TextMeshProUGUI timeToSwapModes;
@@ -39,6 +44,14 @@ public class GameLoopManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+
+    private void Start()
+    {
+        BuildCanvas.gameObject.SetActive(false);
+        RunCanvas.gameObject.SetActive(false);
+    }
+
 
     [ContextMenu("Start")]
     public void StartGame()
@@ -156,6 +169,7 @@ public class GameLoopManager : MonoBehaviour
 
             timeToChange = phase1Time;
             //show run canva
+            StartCoroutine(ShowCanvas(RunCanvas));
             yield return new WaitForSeconds(0.5f);
             //hide run canva
 
@@ -173,6 +187,7 @@ public class GameLoopManager : MonoBehaviour
 
             timeToChange = phase2Time;
             //show buy canva
+            StartCoroutine(ShowCanvas(BuildCanvas));
             yield return new WaitForSeconds(0.5f);
             //hide buy canva
 
@@ -187,5 +202,16 @@ public class GameLoopManager : MonoBehaviour
         }
 
         yield return null;
+    }
+
+
+    private IEnumerator ShowCanvas(Canvas Canva)
+    {
+        for(int i = 0; i<5; i++)
+        {
+            Canva.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.2f);
+        }
+        Canva.gameObject.SetActive(false);
     }
 }
