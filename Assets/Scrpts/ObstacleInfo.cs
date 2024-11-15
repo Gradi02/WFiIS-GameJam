@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObstacleInfo : MonoBehaviour
@@ -31,6 +32,17 @@ public class ObstacleInfo : MonoBehaviour
         if (collidersInContact.Count == 0)
         {
             GetComponent<SpriteRenderer>().material.color = originalColor;
+        }
+    }
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P) && collidersInContact.Count == 0)
+        {
+            //DISABLE MOVEMENT;
+            Debug.Log("PLACED");
+            enabled = false;
         }
     }
 }

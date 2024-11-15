@@ -361,7 +361,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -441,7 +441,7 @@ Transform:
   m_GameObject: {fileID: 639733011}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0091, y: -0.4963, z: 0}
+  m_LocalPosition: {x: 0, y: -0.4963, z: 0}
   m_LocalScale: {x: 0.25162986, y: 7.6990952, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -495,7 +495,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -575,7 +575,7 @@ Transform:
   m_GameObject: {fileID: 674427968}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0187, y: -0.8, z: 0}
+  m_LocalPosition: {x: 0, y: -0.8, z: 0}
   m_LocalScale: {x: 5.0902176, y: 0.77758896, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -629,7 +629,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -763,7 +763,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -843,7 +843,7 @@ Transform:
   m_GameObject: {fileID: 926365194}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -4.66, z: 0}
+  m_LocalPosition: {x: 0, y: -4.66, z: 0}
   m_LocalScale: {x: 19.970886, y: 0.69183904, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -940,6 +940,7 @@ GameObject:
   - component: {fileID: 1996697220}
   - component: {fileID: 1996697219}
   - component: {fileID: 1996697218}
+  - component: {fileID: 1996697221}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1009,7 +1010,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1996697219}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1996697221}
+        m_TargetAssemblyTypeName: Budowanie, Assembly-CSharp
+        m_MethodName: Buduj
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1996697219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1048,6 +1061,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996697216}
   m_CullTransparentMesh: 1
+--- !u!114 &1996697221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996697216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaa236be60ef5f84381cc029b0e8ea22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacles:
+  - {fileID: 2557150863018569117, guid: 7f77c04a0f8003942b0784ea7024de72, type: 3}
 --- !u!1 &2043299966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,7 +1123,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

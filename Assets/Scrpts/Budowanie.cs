@@ -6,6 +6,6 @@ public class Budowanie : MonoBehaviour
 
     public void Buduj()
     {
-        GameObject obstacle = Instantiate(obstacles[0], new Vector3(0,0,0) , Quaternion.identity);
+        Instantiate(obstacles[0], new Vector3(0,0,0) , Quaternion.identity);
     }
 }
