@@ -28,7 +28,7 @@ public class GameLoopManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI p1Points, p2Points, modeText;
     [SerializeField] private Budowanie budowanie;
     [SerializeField] private GameObject BuildCanvas, RunCanvas, bgCanva;
-
+    [SerializeField] private cameraManager camMan1, camMan2;
 
     private void Awake()
     {
@@ -172,6 +172,9 @@ public class GameLoopManager : MonoBehaviour
 
             p1.GetComponent<PlayerMovement>().SetMovement(true);
             p2.GetComponent<PlayerMovement>().SetMovement(true);
+
+            camMan1.target = p1.transform;
+            camMan2.target = p2.transform;
         }
         else
         {
@@ -195,6 +198,9 @@ public class GameLoopManager : MonoBehaviour
 
             b1.transform.position = p1build.transform.position;
             b2.transform.position = p2build.transform.position;
+
+            camMan1.target = b1.transform;
+            camMan2.target = b2.transform;
         }
 
         yield return null;
