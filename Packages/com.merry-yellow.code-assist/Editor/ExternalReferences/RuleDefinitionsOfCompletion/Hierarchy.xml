@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<RuleDefinitionCollection>
+
+	<!--
+	//**-
+	support char '/' in method Find
+	-->
+
+
+	<RuleDefinition Category="Hierarchy" Type="UnityEngine.Transform" Method="Find" Kind="String" Value="%ChildrenNames%" Target="UnityEngine.MonoBehaviour" Argument="n" />
+	<RuleDefinition Category="Hierarchy" Type="UnityEngine.Transform" Method="FindChild" Kind="String" Value="%ChildrenNames%" Target="UnityEngine.MonoBehaviour" Argument="n" />
+	<RuleDefinition Category="Hierarchy" Type="UnityEngine.Transform" Method="GetChild" Kind="Numeric" Value="%ChildrenIndices%" Suffix="%ChildrenNames%" Target="UnityEngine.MonoBehaviour" Argument="index" />
+	
+
+</RuleDefinitionCollection>

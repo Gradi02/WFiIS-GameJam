@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<RuleDefinitionCollection>
+
+	<!--Sorting Layer Name-->
+
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.SortingLayer" Property="name" Kind="String" Value="$SortingLayers" />
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.SortingLayer" Method="NameToID" Kind="String" Argument="name" Value="$SortingLayers" />
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.SortingLayer" Method="GetLayerValueFromName" Kind="String" Argument="name" Value="$SortingLayers" />
+
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.Canvas" Property="sortingLayerName" Kind="String" Value="$SortingLayers" />
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.Renderer" Property="sortingLayerName" Kind="String" Value="$SortingLayers" />
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.Rendering.SortingGroup" Property="sortingLayerName" Kind="String" Value="$SortingLayers" />
+
+
+	
+	<!--Sorting Layer ID-->
+
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.SortingLayer" Property="id" Kind="Numeric" Value="$SortingLayerIds" />
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.SortingLayer" Method="IDToName" Kind="Numeric" Argument="id" Value="$SortingLayerIds" />
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.SortingLayer" Method="GetLayerValueFromID" Kind="Numeric" Argument="id" Value="$SortingLayerIds" />
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.SortingLayer" Method="IsValid" Kind="Numeric" Argument="id" Value="$SortingLayerIds" />
+
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.Canvas" Property="sortingLayerID" Kind="Numeric" Value="$SortingLayerIds" />
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.Renderer" Property="sortingLayerID" Kind="Numeric" Value="$SortingLayerIds" />
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.Rendering.SortingGroup" Property="sortingLayerID" Kind="Numeric" Value="$SortingLayerIds" />
+
+
+
+	<!--Sorting Layer Value-->
+
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.SortingLayer" Property="value" Kind="Numeric" Value="$SortingLayerValues" />
+	
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.Canvas" Property="sortingOrder" Kind="Numeric" Value="$SortingLayerValues" />
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.Renderer" Property="sortingOrder" Kind="Numeric" Value="$SortingLayerValues" />
+	<RuleDefinition Category="SortingLayer" Type="UnityEngine.Rendering.SortingGroup" Property="sortingOrder" Kind="Numeric" Value="$SortingLayerValues" />
+
+
+</RuleDefinitionCollection>
