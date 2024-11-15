@@ -41,4 +41,9 @@ public class ObstacleMovement : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
+
+    public void Stop()
+    {
+        rb.linearVelocity = Vector2.zero;
+    }
 }

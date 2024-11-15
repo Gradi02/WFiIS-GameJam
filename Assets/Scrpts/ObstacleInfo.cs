@@ -9,15 +9,18 @@ public class ObstacleInfo : MonoBehaviour
     private List<Collider2D> collidersInContact = new List<Collider2D>();
     private bool isPlayerOne;
 
+    public ObstacleMovement movement;
+    public BoxCollider2D colliderO;
+    public SpriteRenderer rendererO;
     private void Awake()
     {
-        originalColor = GetComponent<SpriteRenderer>().material.color;
-        GetComponent<SpriteRenderer>().sortingOrder = 1;
+        originalColor = rendererO.material.color;
+        rendererO.sortingOrder = 1;
     }
 
     private void Start()
     {
-        isPlayerOne = GetComponent<ObstacleMovement>().isPlayerOne;   
+        isPlayerOne = movement.isPlayerOne;   
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -27,7 +30,7 @@ public class ObstacleInfo : MonoBehaviour
             if (!collidersInContact.Contains(other))
             {
                 collidersInContact.Add(other);
-                GetComponent<SpriteRenderer>().material.color = Color.red;
+                rendererO.material.color = Color.red;
             }
         }
     }
@@ -43,7 +46,7 @@ public class ObstacleInfo : MonoBehaviour
 
             if (collidersInContact.Count == 0)
             {
-                GetComponent<SpriteRenderer>().material.color = originalColor;
+                rendererO.material.color = originalColor;
             }
         }
     }
@@ -55,10 +58,11 @@ public class ObstacleInfo : MonoBehaviour
 
         if (input && collidersInContact.Count == 0)
         {
-            GetComponent<ObstacleMovement>().enabled = false;
-            GetComponent<SpriteRenderer>().color = Color.white;
-            GetComponent<BoxCollider2D>().isTrigger = false;
-            GetComponent<SpriteRenderer>().sortingOrder = 0;
+            movement.Stop();
+            movement.enabled = false;
+            rendererO.color = Color.white;
+            colliderO.isTrigger = false;
+            rendererO.sortingOrder = 0;
             enabled = false;
         }
     }

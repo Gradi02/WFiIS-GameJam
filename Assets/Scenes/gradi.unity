@@ -1306,6 +1306,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacles:
   - {fileID: 2557150863018569117, guid: 7f77c04a0f8003942b0784ea7024de72, type: 3}
+  - {fileID: 8010790033093986794, guid: 7ad4ecba1a3c8814682f01e54b1b96bc, type: 3}
+  - {fileID: 8010790033093986794, guid: ff22afe81a65a3740a54eb9e0f207db0, type: 3}
 --- !u!1 &1557333789
 GameObject:
   m_ObjectHideFlags: 0
