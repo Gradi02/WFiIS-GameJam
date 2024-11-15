@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 4a16676628257d9478f21cd71a2cee7d
+guid: 07937ebb8e7e315488bf9242dbc5c3ee
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4717979444522356846
-    second: testSprite2_0
+      213: -398497562172611549
+    second: gilotynki_0
+  - first:
+      213: 2240868343647862345
+    second: gilotynki_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: testSprite2_0
+      name: gilotynki_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 330
-        height: 331
+        x: 3
+        y: 4
+        width: 27
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 29f66af21be568eb0800000000000000
-      internalID: -4717979444522356846
+      spriteID: 324a7da1490487af0800000000000000
+      internalID: -398497562172611549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gilotynki_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 4
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94e7c8bc2e9291f10800000000000000
+      internalID: 2240868343647862345
       vertices: []
       indices: 
       edges: []
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      testSprite2_0: -4717979444522356846
+      gilotynki_0: -398497562172611549
+      gilotynki_1: 2240868343647862345
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
