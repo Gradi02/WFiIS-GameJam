@@ -7,7 +7,9 @@ public class Menu : MonoBehaviour
 {
     public void OnPlayButton()
     {
-        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(1);
+        GameLoopManager.instance.StartGame();
+        gameObject.SetActive(false);
     }
 
     public void OnQuitButton()
