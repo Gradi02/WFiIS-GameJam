@@ -21,16 +21,13 @@ public class GameLoopManager : MonoBehaviour
     private GameObject b1, b2;
 
 
-
-    public Canvas BuildCanvas;
-    public Canvas RunCanvas;
-
     //references
     [SerializeField] private PlayerMovement p1, p2;
     [SerializeField] private TextMeshProUGUI timeToSwapModes;
     [SerializeField] private Transform p1start, p2start, p1build, p2build;
     [SerializeField] private TextMeshProUGUI p1Points, p2Points, modeText;
     [SerializeField] private Budowanie budowanie;
+    [SerializeField] private GameObject BuildCanvas, RunCanvas, bgCanva;
 
 
     private void Awake()
@@ -48,8 +45,9 @@ public class GameLoopManager : MonoBehaviour
 
     private void Start()
     {
-        BuildCanvas.gameObject.SetActive(false);
-        RunCanvas.gameObject.SetActive(false);
+        BuildCanvas.SetActive(false);
+        RunCanvas.SetActive(false);
+        bgCanva.SetActive(false);
     }
 
 
@@ -86,7 +84,7 @@ public class GameLoopManager : MonoBehaviour
         else
         {
             player2Wins++;
-            p1Points.text = "Player 2 points: " + player2Wins;
+            p2Points.text = "Player 2 points: " + player2Wins;
         }
 
         //add cash
@@ -169,8 +167,7 @@ public class GameLoopManager : MonoBehaviour
 
             timeToChange = phase1Time;
             //show run canva
-            StartCoroutine(ShowCanvas(RunCanvas));
-            yield return new WaitForSeconds(0.5f);
+            yield return StartCoroutine(ShowCanvas(RunCanvas));
             //hide run canva
 
             p1.GetComponent<PlayerMovement>().SetMovement(true);
@@ -186,9 +183,8 @@ public class GameLoopManager : MonoBehaviour
             p2.GetComponent<PlayerMovement>().SetMovement(false);
 
             timeToChange = phase2Time;
-            //show buy canva
-            StartCoroutine(ShowCanvas(BuildCanvas));
-            yield return new WaitForSeconds(0.5f);
+            //show buy canva          
+            yield return StartCoroutine(ShowCanvas(BuildCanvas));
             //hide buy canva
 
             b1 = budowanie.Buduj();
@@ -205,13 +201,17 @@ public class GameLoopManager : MonoBehaviour
     }
 
 
-    private IEnumerator ShowCanvas(Canvas Canva)
+    private IEnumerator ShowCanvas(GameObject Canva)
     {
+        bgCanva.SetActive(true);
+        bool c = false;
         for(int i = 0; i<5; i++)
         {
-            Canva.gameObject.SetActive(true);
-            yield return new WaitForSeconds(0.2f);
+            c = !c;
+            Canva.SetActive(c);
+            yield return new WaitForSeconds(0.3f);
         }
-        Canva.gameObject.SetActive(false);
+        Canva.SetActive(false);
+        bgCanva.SetActive(false);
     }
 }
