@@ -176,6 +176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd7e2af5f229a94d8c552ba05c6695b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {fileID: 4459221885623858021}
+  colliderO: {fileID: 2039760218204455323}
+  rendererO: {fileID: 4478009673541084814}
 --- !u!114 &4459221885623858021
 MonoBehaviour:
   m_ObjectHideFlags: 0

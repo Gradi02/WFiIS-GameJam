@@ -127,7 +127,7 @@ public class GameLoopManager : MonoBehaviour
 
         if(!isRun)
         {
-            if(b1 != null && b2 != null && !b1.GetComponent<ObstacleInfo>().enabled && !b2.GetComponent<ObstacleInfo>().enabled)
+            if(b1 != null && b2 != null && !b1.GetComponent<ObstacleMovement>().enabled && !b2.GetComponent<ObstacleMovement>().enabled)
             {
                 StartCoroutine(ChangeMode());
                 b1 = null;
@@ -139,12 +139,12 @@ public class GameLoopManager : MonoBehaviour
     private IEnumerator ChangeMode()
     {
         isRun = !isRun;
-        if(b1 != null && b1.GetComponent<ObstacleInfo>().enabled)
+        if(b1 != null && b1.GetComponent<ObstacleMovement>().enabled)
         {
             Destroy(b1);
             b1 = null;
         }
-        if (b2 != null && b2.GetComponent<ObstacleInfo>().enabled)
+        if (b2 != null && b2.GetComponent<ObstacleMovement>().enabled)
         {
             Destroy(b2);
             b2 = null;
