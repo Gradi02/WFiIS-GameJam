@@ -4,8 +4,8 @@ public class Budowanie : MonoBehaviour
 {
     public GameObject[] obstacles;
 
-    public void Buduj()
+    public GameObject Buduj()
     {
-        Instantiate(obstacles[0], new Vector3(0,0,0) , Quaternion.identity);
+        return Instantiate(obstacles[Random.Range(0, obstacles.Length)], new Vector3(0,0,0) , Quaternion.identity);
     }
 }
