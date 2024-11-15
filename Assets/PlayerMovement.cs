@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool canMove = true;
+    private bool canMove = false;
     public float moveSpeed;
 
     public bool isPlayerOne;
@@ -11,9 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash;
     private bool isDashing = false;
 
-    private float dashingPower = 20f;
-    private float dashingTime = 0.2f;
-    private float dashingCooldown = 1f;
+    private float dashingPower = 2f;
 
 
 
@@ -54,22 +52,25 @@ public class PlayerMovement : MonoBehaviour
         {
             moveX = Input.GetAxisRaw("HorizontalWSAD");
             moveY = Input.GetAxisRaw("VerticalWSAD");
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            moveDirection = new Vector2(moveX, moveY).normalized; //This causes the diagonal speed to be normal
+
+            if (Input.GetKeyDown(KeyCode.LeftShift) && moveDirection != Vector2.zero)
             {
                 Dash();
             }
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.RightShift))
-            {
-               Dash();
-            }
             moveX = Input.GetAxisRaw("HorizontalARROWS");
             moveY = Input.GetAxisRaw("VerticalARROWS");
+            moveDirection = new Vector2(moveX, moveY).normalized; //This causes the diagonal speed to be normal
+
+            if (Input.GetKeyDown(KeyCode.RightShift) && moveDirection != Vector2.zero)
+            {
+                Dash();
+            }
         }
 
-        moveDirection = new Vector2(moveX, moveY).normalized; //This causes the diagonal speed to be normal
     }
 
     void Move()
@@ -79,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Dash()
     {
-        //moveDirection += (new Vector2(5, 5));
+        transform.position += new Vector3(moveDirection.x, moveDirection.y, 0) * dashingPower;
     }
 
     public void SetMovement(bool en)
