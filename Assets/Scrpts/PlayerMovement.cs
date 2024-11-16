@@ -3,12 +3,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool canMove = false;
+    private bool canMove = true;
     public float moveSpeed;
 
     public bool isPlayerOne;
 
+    [SerializeField] public GameLoopManager GLM;
 
+    public bool isTable = false;
 
     public bool table = false;
     public bool isInvicible = false;
@@ -26,18 +28,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 moveDirection;
 
-
-    /*TODO
-    - Add Dashing upon pressing the Shit key
-    */
-
     void Update()
     {
         if (!canMove) return;
-        if(isDashing)
-        {
-            return;
-        }
+        //if(isDashing)
+        //{
+        //    return;
+        //}
         ProcessInputs();
     }
 
@@ -45,10 +42,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!canMove) return;
 
-        if (isDashing)
-        {
-            return;
-        }
+        //if (isDashing)
+        //{
+        //    return;
+        //}
         Move();
     }
 
@@ -61,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             moveY = Input.GetAxisRaw("VerticalWSAD");
             moveDirection = new Vector2(moveX, moveY).normalized; //This causes the diagonal speed to be normal
 
-            if (Input.GetKeyDown(KeyCode.LeftShift) && moveDirection != Vector2.zero)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && moveDirection != Vector2.zero && isTable==false)
             {
                 Dash();
             }
@@ -72,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
             moveY = Input.GetAxisRaw("VerticalARROWS");
             moveDirection = new Vector2(moveX, moveY).normalized; //This causes the diagonal speed to be normal
 
-            if (Input.GetKeyDown(KeyCode.RightShift) && moveDirection != Vector2.zero)
+            if (Input.GetKeyDown(KeyCode.RightShift) && moveDirection != Vector2.zero && isTable == false)
             {
                 Dash();
             }
@@ -82,9 +79,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        rb.linearVelocity = new Vector2(moveDirection.x*moveSpeed, moveDirection.y*moveSpeed);
-    }
+        if (isTable == false)
+        {
 
+            rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+
+        }
+    }
     void Dash()
     {
         transform.position += new Vector3(moveDirection.x, moveDirection.y, 0) * dashingPower;

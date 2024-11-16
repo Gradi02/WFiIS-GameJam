@@ -13,13 +13,21 @@ public class GameLoopManager : MonoBehaviour
     private bool isRun = false;
 
     // Manager Veriables
-    private int player1Cash = 0, player2Cash = 0;
+    public int player1Cash = 0, player2Cash = 0;
     private int winnerReward = 10, loserReward = 5;
     private int roundsToWin = 5;
     private int player1Wins = 0, player2Wins = 0;
 
     private GameObject b1, b2;
 
+    public Canvas ReadyForGameCanvas;
+    public TextMeshProUGUI player1ready;
+    public TextMeshProUGUI player2ready;
+    public TextMeshProUGUI Countdowntxt;
+    private bool p1ready = false;
+    private bool p2ready = false;
+    private bool IsCountdowning = false;
+    public Canvas GameInfoCanvas;
 
     //references
     [SerializeField] private PlayerMovement p1, p2;
@@ -52,10 +60,25 @@ public class GameLoopManager : MonoBehaviour
         bgCanva.SetActive(false);
         pop1.SetActive(false);
         pop2.SetActive(false);
-    }
+
+        StartCoroutine(Textflash());
+        GameInfoCanvas.gameObject.SetActive(false);
+}
 
 
     [ContextMenu("Start")]
+
+    private IEnumerator Countdown()
+    {
+        for (int i = 3; i > 0; i--) {
+            yield return new WaitForSeconds(1f);
+            Countdowntxt.text = i.ToString();
+        }
+        yield return new WaitForSeconds(1f);
+        ReadyForGameCanvas.gameObject.SetActive(false);
+        StartGame();
+        GameInfoCanvas.gameObject.SetActive(true);
+    }
     public void StartGame()
     {
         if(!isGameStarted)
@@ -73,6 +96,31 @@ public class GameLoopManager : MonoBehaviour
 
             StartCoroutine(ChangeMode());
             isGameStarted = true;
+        }
+    }
+
+    private IEnumerator Textflash()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.3f);
+            if (p1ready == false)
+            {
+                player1ready.color = new Color(0, 0, 0, 0);
+            }
+            if (p2ready == false)
+            {
+                player2ready.color = new Color(0, 0, 0, 0);
+            }
+            yield return new WaitForSeconds(0.3f);
+            if (p1ready == false)
+            {
+                player1ready.color = Color.white;
+            }
+            if (p2ready == false)
+            {
+                player2ready.color = Color.white;
+            }
         }
     }
 
@@ -132,7 +180,31 @@ public class GameLoopManager : MonoBehaviour
 
     private void Update()
     {
-        if (!isGameStarted) return;
+        if (!isGameStarted)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                player1ready.text = "READY!";
+                p1ready = true;
+                player1ready.color = Color.white;
+            }
+
+            if (Input.GetKeyDown(KeyCode.RightShift))
+            {
+                player2ready.text = "READY!";
+                p2ready = true;
+                player2ready.color = Color.white;
+            }
+
+            if (p1ready && p2ready && !IsCountdowning)
+            {
+                IsCountdowning = true;
+                StartCoroutine(Countdown());
+            }
+
+            return;
+        }
+
 
         timeToChange -= Time.deltaTime;
         timeToSwapModes.text = ("Time: " + (int)timeToChange);
