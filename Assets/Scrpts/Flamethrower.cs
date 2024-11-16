@@ -8,6 +8,7 @@ public class Flamethrower : MonoBehaviour
     public float flameSpeed = 10f; // Prędkość płomienia
     public float shootInterval = 0.5f; // Interwał czasowy między strzałami
     public float flameLifetime = 5f; // Czas życia płomienia
+    public float flameScale = 2f; // Skala płomienia
 
     private float shootTimer;
 
@@ -35,6 +36,7 @@ public class Flamethrower : MonoBehaviour
 
         // Tworzenie instancji płomienia
         GameObject flame = Instantiate(flamePrefab[Random.Range(0, flamePrefab.Length)], flameSpawnPoint.position, Quaternion.LookRotation(directionToPlayer));
+        flame.transform.localScale *= flameScale; // Zwiększ skalę płomienia
         flame.transform.rotation = Quaternion.Euler(0, 0, 0);
         Rigidbody rb = flame.GetComponent<Rigidbody>();
         if (rb == null)
@@ -50,5 +52,3 @@ public class Flamethrower : MonoBehaviour
         Destroy(flame, flameLifetime);
     }
 }
-
-

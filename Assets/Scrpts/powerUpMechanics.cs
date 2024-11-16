@@ -1,32 +1,57 @@
 using System.Runtime.CompilerServices;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 
 public class powerUpMechanics : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D hitInfo)
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
     {
+        PlayerMovement player = hitInfo.GetComponent<PlayerMovement>();
+
         if(hitInfo.gameObject.tag=="Player")
         {
-             int index = Random.Range(1,4);
+            int index = Random.Range(1,4);
             switch (index)
             {
                 case 1: //Table
-
+                    if(player.isPlayerOne==true)
+                    {
+                        player.isTable = true;
+                    } else {
+                        player.isTable = true;
+                    }
                     Destroy(gameObject);
                     break;
 
                 case 2: //Invincibility
+                    if (player.isPlayerOne == true)
+                    {
+                        player.isInvicible = true;  
+                    } else {
+                        player.isInvicible = true;
+                    }
                     Destroy(gameObject);
                     break;
 
                 case 3: //ExtraCash
-
+                    if(player.isPlayerOne==true)
+                    {
+                        player.GLM.player1Cash += 10;
+                    } else {
+                        player.GLM.player2Cash += 10;
+                    }
                     Destroy(gameObject);
                     break;
 
-                case 4: //UNlimited dash
+                case 4: //Unlimited dash
+                    if (player.isPlayerOne == true)
+                    {
 
+                    } else {
+
+                    }
                     Destroy(gameObject);
                     break;
             
@@ -34,5 +59,7 @@ public class powerUpMechanics : MonoBehaviour
 
 
         }
+        
+
     }
 }
