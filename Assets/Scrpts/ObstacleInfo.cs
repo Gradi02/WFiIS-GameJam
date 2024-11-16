@@ -23,7 +23,11 @@ public class ObstacleInfo : MonoBehaviour
 
     private void Start()
     {
-        isPlayerOne = movement.isPlayerOne;   
+        isPlayerOne = movement.isPlayerOne;
+        for (int i = 0; i < elements.Length; i++)
+        {
+            elements[i].GetComponent<SpriteRenderer>().material.color = Color.green;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -55,7 +59,7 @@ public class ObstacleInfo : MonoBehaviour
             {
                 for (int i = 0; i < elements.Length; i++)
                 {
-                    elements[i].GetComponent<SpriteRenderer>().material.color = Color.white;
+                    elements[i].GetComponent<SpriteRenderer>().material.color = Color.green;
                 }
             }
         }

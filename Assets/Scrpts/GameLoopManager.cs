@@ -9,7 +9,7 @@ public class GameLoopManager : MonoBehaviour
     public bool isGameStarted { get; private set; } = false;
 
     //1 - run   2 - building
-    private float phase1Time = 30, phase2Time = 15;
+    private float phase1Time = 30, phase2Time = 25;
     private float timeToChange = 0;
     private bool isRun = false;
 
