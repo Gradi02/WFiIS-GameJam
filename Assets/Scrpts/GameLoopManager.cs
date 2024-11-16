@@ -393,7 +393,7 @@ public class GameLoopManager : MonoBehaviour
             pw1 = Instantiate(powerPref, transform.position, Quaternion.identity);
             pw2 = Instantiate(powerPref, transform.position, Quaternion.identity);
             pw1.transform.position = pos.position;
-            pw2.transform.position = new Vector3(-pos.position.x, pos.position.y, pos.position.z);
+            pw2.transform.position = new Vector3(-pos.position.x-2, pos.position.y, pos.position.z);
 
             timeToChange = phase1Time;
             //show run canva
