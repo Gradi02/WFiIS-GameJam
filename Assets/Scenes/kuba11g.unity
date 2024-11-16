@@ -527,7 +527,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1588891346}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopMenu, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1588891346}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopMenu, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -1277,7 +1277,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1588891346}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopMenu, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -1535,7 +1535,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1588891346}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopMenu, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -1918,7 +1918,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1588891346}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopMenu, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -2313,7 +2313,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1588891346}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopMenu, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -2875,7 +2875,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1588891346}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopMenu, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -2969,8 +2969,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 174d96bf2d5ed9745a1cd991abf742e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 100
-  CoinsText: {fileID: 362170020}
+  coins: 0
+  CoinsText: {fileID: 0}
 --- !u!1 &1729700635
 GameObject:
   m_ObjectHideFlags: 0
@@ -3723,7 +3723,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1588891346}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopMenu, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
