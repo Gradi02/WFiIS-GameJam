@@ -681,6 +681,8 @@ GameObject:
   - component: {fileID: 8493251764820730852}
   - component: {fileID: 4159621909608031671}
   - component: {fileID: 4252512089553529173}
+  - component: {fileID: 7447151187325122057}
+  - component: {fileID: -8273427347685004477}
   m_Layer: 0
   m_Name: Square (5) 1
   m_TagString: Untagged
@@ -781,3 +783,45 @@ MonoBehaviour:
   - {fileID: 1015890553087764323}
   - {fileID: 2161853915051319979}
   - {fileID: 4606207842943079678}
+--- !u!114 &7447151187325122057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8262616184179448986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8093c5b9608e54a88821d5cf8a66bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 6
+  isPlayerOne: 0
+  rb: {fileID: -8273427347685004477}
+--- !u!50 &-8273427347685004477
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8262616184179448986}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
