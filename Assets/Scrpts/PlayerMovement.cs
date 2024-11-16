@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isPlayerOne;
 
+    public float buttonDelay = 3.0f; //the delay between button presses
+    float lastButtonTime = 0; //cache the last pressed time
+
     [SerializeField] public GameLoopManager GLM;
 
     public bool isTable = false;
@@ -23,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float dashingPower = 2f;
     public Animator anim;
+
 
 
     public Rigidbody2D rb;
@@ -106,7 +110,13 @@ public class PlayerMovement : MonoBehaviour
     }
     void Dash()
     {
-        transform.position += new Vector3(moveDirection.x, moveDirection.y, 0) * dashingPower;
+        if (Time.time >= lastButtonTime)
+        {
+            //add the current time to the button delay
+            lastButtonTime = Time.time + buttonDelay;
+            
+             transform.position += new Vector3(moveDirection.x, moveDirection.y, 0) * dashingPower;
+        }
     }
 
     public void SetMovement(bool en)
