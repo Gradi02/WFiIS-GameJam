@@ -36,7 +36,7 @@ public class GameLoopManager : MonoBehaviour
     [SerializeField] private PlayerMovement p1, p2;
     [SerializeField] private TextMeshProUGUI timeToSwapModes;
     [SerializeField] private Transform p1start, p2start, p1build, p2build;
-    [SerializeField] private TextMeshProUGUI p1Points, p2Points, modeText;
+    [SerializeField] private TextMeshProUGUI p1Points, p2Points;
     [SerializeField] private Budowanie budowanie;
     [SerializeField] private GameObject BuildCanvas, RunCanvas, bgCanva;
     [SerializeField] private cameraManager camMan1, camMan2;
@@ -359,8 +359,6 @@ public class GameLoopManager : MonoBehaviour
             pop2.SetActive(false);
             shop.SetActive(false);
 
-            modeText.text = "RUN!";
-
             timeToChange = phase1Time;
             //show run canva
             yield return StartCoroutine(ShowCanvas(RunCanvas));
@@ -384,8 +382,6 @@ public class GameLoopManager : MonoBehaviour
             shop.SetActive(true);
             p1Images[p1SelectedIndex].GetComponent<ItemInfo>().selected.SetActive(true);
             p2Images[p2SelectedIndex].GetComponent<ItemInfo>().selected.SetActive(true);
-
-            modeText.text = "BUILD!";
 
             p1.transform.position = p1start.transform.position;
             p2.transform.position = p2start.transform.position;
