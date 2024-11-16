@@ -11,7 +11,7 @@ public class powerUpMechanics : MonoBehaviour
 
         if(hitInfo.gameObject.tag=="Player")
         {
-            int index = Random.Range(1,4);
+            int index = Random.Range(1,3);
             switch (index)
             {
                 case 1: //Table

@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing = false;
 
     private float dashingPower = 2f;
-
+    public Animator anim;
 
 
     public Rigidbody2D rb;
@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-
+            anim.SetFloat("speed", rb.linearVelocity.magnitude);
         }
     }
     void Dash()
