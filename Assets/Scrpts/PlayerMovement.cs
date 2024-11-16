@@ -3,12 +3,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool canMove = false;
+    private bool canMove = true;
     public float moveSpeed;
 
     public bool isPlayerOne;
 
+    [SerializeField] public GameLoopManager GLM;
 
+    public bool isTable = false;
 
     public bool table = false;
     public bool isInvicible = false;
@@ -26,18 +28,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 moveDirection;
 
-
-    /*TODO
-    - Add Dashing upon pressing the Shit key
-    */
-
     void Update()
     {
         if (!canMove) return;
-        if(isDashing)
-        {
-            return;
-        }
+        //if(isDashing)
+        //{
+        //    return;
+        //}
         ProcessInputs();
     }
 
@@ -45,10 +42,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!canMove) return;
 
-        if (isDashing)
-        {
-            return;
-        }
+        //if (isDashing)
+        //{
+        //    return;
+        //}
         Move();
     }
 
