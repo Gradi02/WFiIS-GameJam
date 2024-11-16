@@ -10,10 +10,12 @@ public class Menu : MonoBehaviour
         //SceneManager.LoadScene(1);
         //GameLoopManager.instance.StartGame();
         gameObject.SetActive(false);
+        FindFirstObjectByType<AudioManager>().Play("click");
     }
 
     public void OnQuitButton()
     {
+        FindFirstObjectByType<AudioManager>().Play("click");
         Application.Quit();
     }
 }

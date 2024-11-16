@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class turretMechanic : MonoBehaviour
 {
-    public float speed;
     public float lineOfSight;
     public float shootingRange;
     public float fireRate = 2f;
@@ -17,9 +16,7 @@ public class turretMechanic : MonoBehaviour
     private Transform player; 
     void Start()
     {
-
         player = GameObject.FindGameObjectWithTag("Player").transform;
-
     }
 
     // Update is called once per frame
