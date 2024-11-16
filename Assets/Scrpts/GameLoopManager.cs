@@ -13,7 +13,7 @@ public class GameLoopManager : MonoBehaviour
     private bool isRun = false;
 
     // Manager Veriables
-    private int player1Cash = 0, player2Cash = 0;
+    public int player1Cash = 0, player2Cash = 0;
     private int winnerReward = 10, loserReward = 5;
     private int roundsToWin = 5;
     private int player1Wins = 0, player2Wins = 0;
