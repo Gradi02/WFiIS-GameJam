@@ -53,6 +53,11 @@ public class FlameCollisionHandler : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(GameLoopManager.instance.ResetPlr(collision.gameObject));
+        }
+
         Destroy(gameObject);
     }
 }
