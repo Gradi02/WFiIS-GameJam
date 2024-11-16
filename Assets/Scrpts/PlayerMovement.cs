@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool canMove = true;
+    private bool canMove = false;
     public float moveSpeed;
 
     public bool isPlayerOne;
@@ -17,14 +17,15 @@ public class PlayerMovement : MonoBehaviour
 
     public bool table = false;
     public bool isInvicible = false;
-    
-
+    private float endTable, endInv;
+    public Sprite tableImg;
+    public Color normal, alpha;
 
     private bool canDash;
     private bool isDashing = false;
 
     private float dashingPower = 2f;
-
+    public Animator anim;
 
 
 
@@ -34,7 +35,28 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!canMove) return;
+        if(isTable)
+        {
+            endTable -= Time.deltaTime;
+            if (endTable < 0)
+            {
+                isTable = false;
+                GetComponent<Animator>().enabled = true;
+            }
+        }
+
+        if (isInvicible)
+        {
+            endInv -= Time.deltaTime;
+            if (endInv < 0)
+            {
+                isInvicible = false;
+                GetComponent<BoxCollider2D>().enabled = true;
+                GetComponent<SpriteRenderer>().color = normal;
+            }
+        }
+
+        if (!canMove || isTable) return;
         //if(isDashing)
         //{
         //    return;
@@ -44,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!canMove) return;
+        if (!canMove || isTable) return;
 
         //if (isDashing)
         //{
@@ -83,12 +105,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        if (isTable == false)
-        {
-
-            rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-
-        }
+        rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        anim.SetFloat("speed", rb.linearVelocity.magnitude);
     }
     void Dash()
     {
@@ -105,5 +123,21 @@ public class PlayerMovement : MonoBehaviour
     {
         canMove = en;
         rb.linearVelocity = Vector2.zero;
+    }
+
+    public void SetTable()
+    {
+        endTable = 3f;
+        isTable = true;
+        GetComponent<Animator>().enabled = false;
+        GetComponent<SpriteRenderer>().sprite = tableImg;
+    }
+
+    public void SetInv()
+    {
+        endInv = 3f;
+        isInvicible = true;
+        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().color = alpha;
     }
 }

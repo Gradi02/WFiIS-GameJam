@@ -11,6 +11,7 @@ public class Kolce : MonoBehaviour
         for (int i = 0; i < kolce.Length; i++)
         {
             initialYPositions[i] = kolce[i].transform.localPosition.y;
+            kolce[i].SetActive(false);
         }
 
         StartCoroutine(Kolcowanie());
@@ -23,6 +24,7 @@ public class Kolce : MonoBehaviour
             yield return new WaitForSeconds(2f);
             for (int i = 0; i < kolce.Length; i++)
             {
+                kolce[i].SetActive(true);
                 LeanTween.scaleY(kolce[i], 5, 0.2f);
                 LeanTween.moveLocalY(kolce[i], initialYPositions[i] + 0.58f, 0.2f);
             }
@@ -33,6 +35,12 @@ public class Kolce : MonoBehaviour
                 LeanTween.scaleY(kolce[i], 1, 0.2f);
                 LeanTween.moveLocalY(kolce[i], initialYPositions[i], 0.2f);
             }
+            yield return new WaitForSeconds(0.21f);
+            for (int i = 0; i < kolce.Length; i++)
+            {
+                kolce[i].SetActive(false);
+            }
+            
         }
     }
 }

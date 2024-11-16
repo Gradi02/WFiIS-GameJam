@@ -1,5 +1,4 @@
 using System.Runtime.CompilerServices;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 
@@ -16,42 +15,17 @@ public class powerUpMechanics : MonoBehaviour
             switch (index)
             {
                 case 1: //Table
-                    if(player.isPlayerOne==true)
-                    {
-                        player.isTable = true;
-                    } else {
-                        player.isTable = true;
-                    }
+                    GameLoopManager.instance.AddEffect(player.isPlayerOne, GameLoopManager.Types.table);
                     Destroy(gameObject);
                     break;
 
                 case 2: //Invincibility
-                    if (player.isPlayerOne == true)
-                    {
-                        player.isInvicible = true;  
-                    } else {
-                        player.isInvicible = true;
-                    }
+                    GameLoopManager.instance.AddEffect(player.isPlayerOne, GameLoopManager.Types.invc);
                     Destroy(gameObject);
                     break;
 
                 case 3: //ExtraCash
-                    if(player.isPlayerOne==true)
-                    {
-                        player.GLM.player1Cash += 10;
-                    } else {
-                        player.GLM.player2Cash += 10;
-                    }
-                    Destroy(gameObject);
-                    break;
-
-                case 4: //Unlimited dash
-                    if (player.isPlayerOne == true)
-                    {
-
-                    } else {
-
-                    }
+                    GameLoopManager.instance.AddEffect(player.isPlayerOne, GameLoopManager.Types.cash);
                     Destroy(gameObject);
                     break;
             
