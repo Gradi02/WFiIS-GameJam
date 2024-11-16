@@ -45,6 +45,8 @@ public class GameLoopManager : MonoBehaviour
     [SerializeField] private Image[] p1Images, p2Images;
     [SerializeField] private Color disabledColor, defaultColor;
     [SerializeField] private GameObject shop;
+    [SerializeField] private GameObject winCanva;
+    [SerializeField] private TextMeshProUGUI winText;
 
     private void Awake()
     {
@@ -66,6 +68,7 @@ public class GameLoopManager : MonoBehaviour
         bgCanva.SetActive(false);
         pop1.SetActive(false);
         pop2.SetActive(false);
+        winCanva.SetActive(false);
 
         StartCoroutine(Textflash());
         GameInfoCanvas.gameObject.SetActive(false);
@@ -187,7 +190,8 @@ public class GameLoopManager : MonoBehaviour
 
     private void GameWinHandler(bool winPlayer1)
     {
-        //wincanva
+        winCanva.SetActive(true);
+        winText.text = winPlayer1 ? "Player 1 WIN" : "Player 2 WIN";
 
         //disable players movement
         isGameStarted = false;
