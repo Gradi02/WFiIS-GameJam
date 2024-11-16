@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool canMove = true;
+    private bool canMove = false;
     public float moveSpeed;
 
     public bool isPlayerOne;
