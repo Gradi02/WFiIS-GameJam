@@ -77,6 +77,7 @@ public class ObstacleInfo : MonoBehaviour
             }
             //colliderO.isTrigger = false;
             //rendererO.sortingOrder = 0;
+            GameLoopManager.instance.BuyB(isPlayerOne);
             enabled = false;
         }
     }
