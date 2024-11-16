@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,12 +10,14 @@ public class ObstacleInfo : MonoBehaviour
     private List<Collider2D> collidersInContact = new List<Collider2D>();
     private bool isPlayerOne;
 
+
+    public GameObject[] elements;
+
     public ObstacleMovement movement;
     public BoxCollider2D colliderO;
     public SpriteRenderer rendererO;
     private void Awake()
     {
-        originalColor = rendererO.material.color;
         rendererO.sortingOrder = 1;
     }
 
@@ -30,7 +33,11 @@ public class ObstacleInfo : MonoBehaviour
             if (!collidersInContact.Contains(other))
             {
                 collidersInContact.Add(other);
-                rendererO.material.color = Color.red;
+
+                for(int i = 0; i<elements.Length; i++)
+                {
+                    elements[i].GetComponent<SpriteRenderer>().material.color = Color.red;
+                }
             }
         }
     }
@@ -46,7 +53,10 @@ public class ObstacleInfo : MonoBehaviour
 
             if (collidersInContact.Count == 0)
             {
-                rendererO.material.color = originalColor;
+                for (int i = 0; i < elements.Length; i++)
+                {
+                    elements[i].GetComponent<SpriteRenderer>().material.color = Color.white;
+                }
             }
         }
     }
@@ -60,9 +70,13 @@ public class ObstacleInfo : MonoBehaviour
         {
             movement.Stop();
             movement.enabled = false;
-            rendererO.color = Color.white;
-            colliderO.isTrigger = false;
-            rendererO.sortingOrder = 0;
+            for (int i = 0; i < elements.Length; i++)
+            {
+                elements[i].GetComponent<SpriteRenderer>().material.color = Color.white;
+                elements[i].GetComponent<SpriteRenderer>().sortingOrder = 0;
+            }
+            //colliderO.isTrigger = false;
+            //rendererO.sortingOrder = 0;
             enabled = false;
         }
     }

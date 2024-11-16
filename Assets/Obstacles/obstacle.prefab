@@ -176,6 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd7e2af5f229a94d8c552ba05c6695b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elements:
+  - {fileID: 2557150863018569117}
   movement: {fileID: 4459221885623858021}
   colliderO: {fileID: 2039760218204455323}
   rendererO: {fileID: 4478009673541084814}
