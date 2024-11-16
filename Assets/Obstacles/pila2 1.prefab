@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2240868343647862345, guid: 07937ebb8e7e315488bf9242dbc5c3ee, type: 3}
+  m_Sprite: {fileID: -398497562172611549, guid: 07937ebb8e7e315488bf9242dbc5c3ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -168,7 +168,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.2392157, g: 0.2392157, b: 0.2392157, a: 1}
+  m_Color: {r: 0.8980393, g: 0.882353, b: 0.882353, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -374,9 +374,8 @@ GameObject:
   - component: {fileID: 7010829378015419349}
   - component: {fileID: -2166211848775401217}
   - component: {fileID: -7321274379479764240}
-  - component: {fileID: 9138346430419112539}
   m_Layer: 0
-  m_Name: pila2
+  m_Name: pila2 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -444,7 +443,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7079293968711305560, guid: 6f39c4414f5dad144ae00b4b6c6303c8, type: 3}
+  m_Sprite: {fileID: -731979107901365186, guid: 6f39c4414f5dad144ae00b4b6c6303c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -545,15 +544,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &9138346430419112539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8010790033093986794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9abeaaf0996fa7e40a85ece917edd6a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
