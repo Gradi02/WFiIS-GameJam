@@ -9,7 +9,7 @@ public class GameLoopManager : MonoBehaviour
     public bool isGameStarted { get; private set; } = false;
 
     //1 - run   2 - building
-    private float phase1Time = 30, phase2Time = 30;
+    private float phase1Time = 30, phase2Time = 15;
     private float timeToChange = 0;
     private bool isRun = false;
 
@@ -29,6 +29,7 @@ public class GameLoopManager : MonoBehaviour
     private bool p2ready = false;
     private bool IsCountdowning = false;
     private int p1SelectedIndex = 0, p2SelectedIndex = 0;
+    private GameObject pw1, pw2;
 
     public Canvas GameInfoCanvas;
 
@@ -47,6 +48,9 @@ public class GameLoopManager : MonoBehaviour
     [SerializeField] private GameObject shop;
     [SerializeField] private GameObject winCanva;
     [SerializeField] private TextMeshProUGUI winText;
+    [SerializeField] private Transform[] powerupSlots;
+    [SerializeField] private GameObject powerPref;
+
 
     private void Awake()
     {
@@ -160,8 +164,8 @@ public class GameLoopManager : MonoBehaviour
             player2Cash += 10;
         }
 
-        p1Points.text = "Points: " + player1Wins + "\ncash: " + player1Cash;
-        p2Points.text = "Points: " + player2Wins + "\ncash: " + player2Cash;
+        p1Points.text = "Points: " + player1Wins + "/5\ncash: " + player1Cash;
+        p2Points.text = "Points: " + player2Wins + "/5\ncash: " + player2Cash;
         bool win = CheckForGameWin();
 
         if(win)
@@ -199,6 +203,7 @@ public class GameLoopManager : MonoBehaviour
 
     public void ResetPlayer(GameObject player)
     {
+        FindFirstObjectByType<AudioManager>().Play("hit");
         if (player.name == "p1")
             p1.transform.position = p1start.transform.position;
         else
@@ -238,6 +243,10 @@ public class GameLoopManager : MonoBehaviour
 
         if (timeToChange < 0)
         {
+            player1Cash += 5;
+            player2Cash += 5;
+            p1Points.text = "Points: " + player1Wins + "/5\ncash: " + player1Cash;
+            p2Points.text = "Points: " + player2Wins + "/5\ncash: " + player2Cash;
             StartCoroutine(ChangeMode());
         }
 
@@ -352,12 +361,22 @@ public class GameLoopManager : MonoBehaviour
 
         if (isRun)
         {
+            FindFirstObjectByType<AudioManager>().Stop("buildbg");
+            FindFirstObjectByType<AudioManager>().Play("runbg");
             camMan1.gameObject.SetActive(true);
             camMan2.gameObject.SetActive(true);
             buildCam.gameObject.SetActive(false);
             pop1.SetActive(false);
             pop2.SetActive(false);
             shop.SetActive(false);
+
+            Destroy(pw1);
+            Destroy(pw2);
+            Transform pos = powerupSlots[Random.Range(0, powerupSlots.Length)];
+            pw1 = Instantiate(powerPref, transform.position, Quaternion.identity);
+            pw2 = Instantiate(powerPref, transform.position, Quaternion.identity);
+            pw1.transform.position = pos.position;
+            pw2.transform.position = new Vector3(-pos.position.x, pos.position.y, pos.position.z);
 
             timeToChange = phase1Time;
             //show run canva
@@ -372,7 +391,12 @@ public class GameLoopManager : MonoBehaviour
         }
         else
         {
+            FindFirstObjectByType<AudioManager>().Stop("runbg");
+            FindFirstObjectByType<AudioManager>().Play("buildbg");
             CheckForBlockedItems();
+
+            Destroy(pw1);
+            Destroy(pw2);
 
             camMan1.gameObject.SetActive(false);
             camMan2.gameObject.SetActive(false);
@@ -418,15 +442,60 @@ public class GameLoopManager : MonoBehaviour
         {
             b1 = null;
             player1Cash -= p1Images[p1SelectedIndex].GetComponent<ItemInfo>().price;
-            p1Points.text = "Points: " + player1Wins + "\ncash: " + player1Cash;
+            p1Points.text = "Points: " + player1Wins + "/5\ncash: " + player1Cash;
             CheckForBlockedItems();
         }
         else
         {
             b2 = null;
             player2Cash -= p2Images[p2SelectedIndex].GetComponent<ItemInfo>().price;
-            p2Points.text = "Points: " + player2Wins + "\ncash: " + player2Cash;
+            p2Points.text = "Points: " + player2Wins + "/5\ncash: " + player2Cash;
             CheckForBlockedItems();
         }
+    }
+
+    public void AddEffect(bool if1player, Types tp)
+    {
+        if(if1player)
+        {
+            switch(tp)
+            {
+                case Types.table:
+                    p2.SetTable();
+                    break;
+                case Types.invc:
+                    p1.SetInv();
+                    break;
+                case Types.cash:
+                    player1Cash += 5;
+                    p1Points.text = "Points: " + player1Wins + "/5\ncash: " + player1Cash;
+                    p2Points.text = "Points: " + player2Wins + "/5\ncash: " + player2Cash;
+                    break;
+            }
+        }
+        else
+        {
+            switch (tp)
+            {
+                case Types.table:
+                    p1.SetTable();
+                    break;
+                case Types.invc:
+                    p2.SetInv();
+                    break;
+                case Types.cash:
+                    player2Cash += 5;
+                    p1Points.text = "Points: " + player1Wins + "/5\ncash: " + player1Cash;
+                    p2Points.text = "Points: " + player2Wins + "/5\ncash: " + player2Cash;
+                    break;
+            }
+        }
+    }
+
+    public enum Types
+    {
+        table,
+        invc,
+        cash
     }
 }
