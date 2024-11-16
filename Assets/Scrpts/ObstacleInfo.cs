@@ -79,7 +79,7 @@ public class ObstacleInfo : MonoBehaviour
                 elements[i].GetComponent<SpriteRenderer>().material.color = Color.white;
                 elements[i].GetComponent<SpriteRenderer>().sortingOrder = 0;
             }
-            //colliderO.isTrigger = false;
+            colliderO.isTrigger = false;
             //rendererO.sortingOrder = 0;
             GameLoopManager.instance.BuyB(isPlayerOne);
             enabled = false;

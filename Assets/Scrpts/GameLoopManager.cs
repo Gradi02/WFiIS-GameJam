@@ -205,24 +205,39 @@ public class GameLoopManager : MonoBehaviour
     {
        
     }
-
+    private bool p1dead = false, p2dead = false;
     public IEnumerator ResetPlr(GameObject player)
     {
         FindFirstObjectByType<AudioManager>().Play("hit");
         if (player.name == "p1")
         {
-            LeanTween.moveLocal(p1.gameObject, p1start.transform.position, 1f).setEase(LeanTweenType.easeInOutSine);
-            p1.gameObject.GetComponent<PlayerMovement>().SetMovement(false);
-            yield return new WaitForSeconds(1f);
-            p1.gameObject.GetComponent<PlayerMovement>().SetMovement(true);
+            if(!p1dead)
+            {
+                p1dead = true;
+                p1.GetComponent<BoxCollider2D>().enabled = false;
+                LeanTween.moveLocal(p1.gameObject, p1start.transform.position, 1f).setEase(LeanTweenType.easeInOutSine);
+                p1.gameObject.GetComponent<PlayerMovement>().SetMovement(false);
+                yield return new WaitForSeconds(1f);
+                LeanTween.cancel(p1.gameObject);
+                p1.gameObject.GetComponent<PlayerMovement>().SetMovement(true);
+                p1.GetComponent<BoxCollider2D>().enabled = true;
+                p1dead = false;
+            }
         }
         else
         {
-            LeanTween.moveLocal(p2.gameObject, p2start.transform.position, 1f).setEase(LeanTweenType.easeInOutSine);
-            p2.gameObject.GetComponent<PlayerMovement>().SetMovement(false);
-            yield return new WaitForSeconds(1f);
-            p2.gameObject.GetComponent<PlayerMovement>().SetMovement(true);
-
+            if (!p2dead)
+            {
+                p2dead = true;
+                p2.GetComponent<BoxCollider2D>().enabled = false;
+                LeanTween.moveLocal(p2.gameObject, p2start.transform.position, 0.5f).setEase(LeanTweenType.easeInOutSine);
+                p2.gameObject.GetComponent<PlayerMovement>().SetMovement(false);
+                yield return new WaitForSeconds(1f);
+                LeanTween.cancel(p2.gameObject);
+                p2.gameObject.GetComponent<PlayerMovement>().SetMovement(true);
+                p2.GetComponent<BoxCollider2D>().enabled = true;
+                p2dead = false;
+            }
         }
 
     }
