@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class Flamethrower : MonoBehaviour
 {
-    public GameObject[] flamePrefab; // Prefab płomienia
-    public Transform flameSpawnPoint; // Punkt, z którego płomień będzie wystrzeliwany
-    public Transform player; // Referencja do obiektu gracza
-    public float flameSpeed = 10f; // Prędkość płomienia
-    public float shootInterval = 0.5f; // Interwał czasowy między strzałami
-    public float flameLifetime = 5f; // Czas życia płomienia
-    public float flameScale = 2f; // Skala płomienia
+    public GameObject[] flamePrefab;
+    public Transform flameSpawnPoint;
+    public Transform player;
+    public float flameSpeed = 10f;
+    public float shootInterval = 0.5f;
+    public float flameLifetime = 5f;
+    public float flameScale = 2f;
 
     private float shootTimer;
 
@@ -31,24 +31,28 @@ public class Flamethrower : MonoBehaviour
     {
         if (player == null) return;
 
-        // Oblicz kierunek w stronę gracza
-        Vector3 directionToPlayer = (player.position - flameSpawnPoint.position).normalized * Random.Range(0.8f, 1.2f);
+        Vector2 directionToPlayer = (player.position - flameSpawnPoint.position).normalized * Random.Range(0.8f, 1.2f);
 
-        // Tworzenie instancji płomienia
-        GameObject flame = Instantiate(flamePrefab[Random.Range(0, flamePrefab.Length)], flameSpawnPoint.position, Quaternion.LookRotation(directionToPlayer));
-        flame.transform.localScale *= flameScale; // Zwiększ skalę płomienia
-        flame.transform.rotation = Quaternion.Euler(0, 0, 0);
-        Rigidbody rb = flame.GetComponent<Rigidbody>();
+        GameObject flame = Instantiate(flamePrefab[Random.Range(0, flamePrefab.Length)], flameSpawnPoint.position, Quaternion.identity);
+        flame.transform.localScale *= flameScale;
+        Rigidbody2D rb = flame.GetComponent<Rigidbody2D>();
         if (rb == null)
         {
-            rb = flame.AddComponent<Rigidbody>();
+            rb = flame.AddComponent<Rigidbody2D>();
         }
-        // Wyłączenie wpływu grawitacji na płomień
-        rb.useGravity = false;
-        // Nadanie prędkości płomieniowi w kierunku gracza
+        rb.gravityScale = 0;
         rb.linearVelocity = directionToPlayer * flameSpeed;
 
-        // Zniszczenie płomienia po określonym czasie
+        flame.AddComponent<FlameCollisionHandler>();
+
         Destroy(flame, flameLifetime);
+    }
+}
+
+public class FlameCollisionHandler : MonoBehaviour
+{
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
     }
 }
