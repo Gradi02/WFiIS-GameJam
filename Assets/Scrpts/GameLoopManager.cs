@@ -8,7 +8,7 @@ public class GameLoopManager : MonoBehaviour
     public bool isGameStarted { get; private set; } = false;
 
     //1 - run   2 - building
-    private float phase1Time = 10, phase2Time = 10;
+    private float phase1Time = 30, phase2Time = 30;
     private float timeToChange = 0;
     private bool isRun = false;
 
@@ -29,6 +29,8 @@ public class GameLoopManager : MonoBehaviour
     [SerializeField] private Budowanie budowanie;
     [SerializeField] private GameObject BuildCanvas, RunCanvas, bgCanva;
     [SerializeField] private cameraManager camMan1, camMan2;
+    [SerializeField] private Camera buildCam;
+    [SerializeField] private GameObject pop1, pop2;
 
     private void Awake()
     {
@@ -48,6 +50,8 @@ public class GameLoopManager : MonoBehaviour
         BuildCanvas.SetActive(false);
         RunCanvas.SetActive(false);
         bgCanva.SetActive(false);
+        pop1.SetActive(false);
+        pop2.SetActive(false);
     }
 
 
@@ -64,8 +68,8 @@ public class GameLoopManager : MonoBehaviour
             p1.transform.position = p1start.transform.position;
             p2.transform.position = p2start.transform.position;
 
-            p1Points.text = "Player 1 points: 0";
-            p2Points.text = "Player 2 points: 0";
+            p1Points.text = "Points: 0\ncash: 0";
+            p2Points.text = "Points: 0\ncash: 0";
 
             StartCoroutine(ChangeMode());
             isGameStarted = true;
@@ -79,16 +83,18 @@ public class GameLoopManager : MonoBehaviour
         if(p1)
         {
             player1Wins++;
-            p1Points.text = "Player 1 points: " + player1Wins;
+            player1Cash += 10;
+            player2Cash += 5;          
         }
         else
         {
             player2Wins++;
-            p2Points.text = "Player 2 points: " + player2Wins;
+            player1Cash += 5;
+            player2Cash += 10;
         }
 
-        //add cash
-
+        p1Points.text = "Points: " + player1Wins + "\ncash: " + player1Cash;
+        p2Points.text = "Points: " + player2Wins + "\ncash: " + player2Cash;
         bool win = CheckForGameWin();
 
         if(win)
@@ -163,6 +169,11 @@ public class GameLoopManager : MonoBehaviour
 
         if (isRun)
         {
+            camMan1.gameObject.SetActive(true);
+            camMan2.gameObject.SetActive(true);
+            buildCam.gameObject.SetActive(false);
+            pop1.SetActive(false);
+            pop2.SetActive(false);
             modeText.text = "RUN!";
 
             timeToChange = phase1Time;
@@ -178,6 +189,11 @@ public class GameLoopManager : MonoBehaviour
         }
         else
         {
+            camMan1.gameObject.SetActive(false);
+            camMan2.gameObject.SetActive(false);
+            buildCam.gameObject.SetActive(true);
+            pop1.SetActive(true);
+            pop2.SetActive(true);
             modeText.text = "BUILD!";
 
             p1.transform.position = p1start.transform.position;
