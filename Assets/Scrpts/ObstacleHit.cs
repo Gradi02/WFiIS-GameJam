@@ -7,6 +7,7 @@ public class ObstacleHit : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             GameLoopManager.instance.ResetPlayer(collision.gameObject);
+            StartCoroutine(GameLoopManager.instance.ResetPlr(collision.gameObject));
         }
     }
 }

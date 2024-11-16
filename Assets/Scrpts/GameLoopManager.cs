@@ -203,11 +203,28 @@ public class GameLoopManager : MonoBehaviour
 
     public void ResetPlayer(GameObject player)
     {
+       
+    }
+
+    public IEnumerator ResetPlr(GameObject player)
+    {
         FindFirstObjectByType<AudioManager>().Play("hit");
         if (player.name == "p1")
-            p1.transform.position = p1start.transform.position;
+        {
+            LeanTween.moveLocal(p1.gameObject, p1start.transform.position, 1f).setEase(LeanTweenType.easeInOutSine);
+            p1.gameObject.GetComponent<PlayerMovement>().SetMovement(false);
+            yield return new WaitForSeconds(1f);
+            p1.gameObject.GetComponent<PlayerMovement>().SetMovement(true);
+        }
         else
-            p2.transform.position = p2start.transform.position;
+        {
+            LeanTween.moveLocal(p2.gameObject, p2start.transform.position, 1f).setEase(LeanTweenType.easeInOutSine);
+            p2.gameObject.GetComponent<PlayerMovement>().SetMovement(false);
+            yield return new WaitForSeconds(1f);
+            p2.gameObject.GetComponent<PlayerMovement>().SetMovement(true);
+
+        }
+
     }
 
     private void Update()
