@@ -439,7 +439,6 @@ GameObject:
   - component: {fileID: 240151101}
   - component: {fileID: 240151100}
   - component: {fileID: 240151099}
-  - component: {fileID: 240151098}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -468,21 +467,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &240151098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240151096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774c3a9fa6efee84fb154981308348af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemID: 4
-  PriceText: {fileID: 1790622809}
-  ShopManager: {fileID: 1588891344}
 --- !u!114 &240151099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,7 +727,6 @@ GameObject:
   - component: {fileID: 323138499}
   - component: {fileID: 323138498}
   - component: {fileID: 323138497}
-  - component: {fileID: 323138500}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -866,21 +849,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323138495}
   m_CullTransparentMesh: 1
---- !u!114 &323138500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323138495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774c3a9fa6efee84fb154981308348af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemID: 1
-  PriceText: {fileID: 872249431}
-  ShopManager: {fileID: 1588891344}
 --- !u!1 &362170018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,8 +1013,8 @@ GameObject:
   m_Component:
   - component: {fileID: 650219968}
   - component: {fileID: 650219967}
-  - component: {fileID: 650219966}
   - component: {fileID: 650219969}
+  - component: {fileID: 650219970}
   m_Layer: 31
   m_Name: Square
   m_TagString: Untagged
@@ -1054,32 +1022,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &650219966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650219965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4094ad340797be848b0405c04d42d7c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flamePrefab:
-  - {fileID: 5287037846897240426, guid: b18d6671dd2f75d45bfd1843f6a46764, type: 3}
-  - {fileID: 6297769025701092264, guid: 032b2280b2695274d9fb45fc64f1e134, type: 3}
-  - {fileID: 1864505987555981677, guid: e876933a753348149ba0241ccc99d483, type: 3}
-  - {fileID: 7636355639467759600, guid: 61bfb3d1c48153b4f8e15b15755188ba, type: 3}
-  - {fileID: 2203364591920369028, guid: 91fe21a6cb6a28044aef89d0d3fbc005, type: 3}
-  - {fileID: 8466989517969595617, guid: 803f474cc6725d74186a41d046b8cac6, type: 3}
-  - {fileID: 5844356795314498626, guid: cdbb237f0312bc545a94d9c83531950e, type: 3}
-  - {fileID: 8129642181244736260, guid: f9ad6812b092d0e4cb15f0533a6c8190, type: 3}
-  flameSpawnPoint: {fileID: 650219968}
-  player: {fileID: 1964041190}
-  flameSpeed: 10
-  shootInterval: 0
-  flameLifetime: 5
 --- !u!212 &650219967
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1177,6 +1119,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &650219970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650219965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4094ad340797be848b0405c04d42d7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flamePrefab:
+  - {fileID: 5287037846897240426, guid: b18d6671dd2f75d45bfd1843f6a46764, type: 3}
+  - {fileID: 6297769025701092264, guid: 032b2280b2695274d9fb45fc64f1e134, type: 3}
+  - {fileID: 1864505987555981677, guid: e876933a753348149ba0241ccc99d483, type: 3}
+  - {fileID: 7636355639467759600, guid: 61bfb3d1c48153b4f8e15b15755188ba, type: 3}
+  - {fileID: 2203364591920369028, guid: 91fe21a6cb6a28044aef89d0d3fbc005, type: 3}
+  - {fileID: 8466989517969595617, guid: 803f474cc6725d74186a41d046b8cac6, type: 3}
+  - {fileID: 5844356795314498626, guid: cdbb237f0312bc545a94d9c83531950e, type: 3}
+  - {fileID: 8129642181244736260, guid: f9ad6812b092d0e4cb15f0533a6c8190, type: 3}
+  flameSpawnPoint: {fileID: 650219968}
+  player: {fileID: 1964041190}
+  flameSpeed: 10
+  shootInterval: 0
+  flameLifetime: 5
+  flameScale: 10
 --- !u!1 &656481533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,7 +1158,6 @@ GameObject:
   - component: {fileID: 656481538}
   - component: {fileID: 656481537}
   - component: {fileID: 656481536}
-  - component: {fileID: 656481535}
   m_Layer: 5
   m_Name: Button (6)
   m_TagString: Untagged
@@ -1218,21 +1186,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &656481535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656481533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774c3a9fa6efee84fb154981308348af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemID: 7
-  PriceText: {fileID: 1343025883}
-  ShopManager: {fileID: 1588891344}
 --- !u!114 &656481536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1447,7 +1400,6 @@ GameObject:
   - component: {fileID: 741764050}
   - component: {fileID: 741764049}
   - component: {fileID: 741764048}
-  - component: {fileID: 741764047}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -1476,21 +1428,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &741764047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741764045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774c3a9fa6efee84fb154981308348af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemID: 2
-  PriceText: {fileID: 120015510}
-  ShopManager: {fileID: 1588891344}
 --- !u!114 &741764048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1830,7 +1767,6 @@ GameObject:
   - component: {fileID: 943160824}
   - component: {fileID: 943160823}
   - component: {fileID: 943160822}
-  - component: {fileID: 943160821}
   m_Layer: 5
   m_Name: Button (7)
   m_TagString: Untagged
@@ -1859,21 +1795,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &943160821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943160819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774c3a9fa6efee84fb154981308348af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemID: 8
-  PriceText: {fileID: 742282437}
-  ShopManager: {fileID: 1588891344}
 --- !u!114 &943160822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2225,7 +2146,6 @@ GameObject:
   - component: {fileID: 1342852304}
   - component: {fileID: 1342852303}
   - component: {fileID: 1342852302}
-  - component: {fileID: 1342852301}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -2254,21 +2174,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1342852301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342852299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774c3a9fa6efee84fb154981308348af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemID: 3
-  PriceText: {fileID: 275533801}
-  ShopManager: {fileID: 1588891344}
 --- !u!114 &1342852302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2787,7 +2692,6 @@ GameObject:
   - component: {fileID: 1561363229}
   - component: {fileID: 1561363228}
   - component: {fileID: 1561363227}
-  - component: {fileID: 1561363226}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -2816,21 +2720,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1561363226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561363224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774c3a9fa6efee84fb154981308348af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemID: 5
-  PriceText: {fileID: 230639341}
-  ShopManager: {fileID: 1588891344}
 --- !u!114 &1561363227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2969,54 +2858,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 174d96bf2d5ed9745a1cd991abf742e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 0
-  CoinsText: {fileID: 0}
---- !u!1 &1729700635
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1729700637}
-  - component: {fileID: 1729700636}
-  m_Layer: 0
-  m_Name: ShopManagerP2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1729700636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729700635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 174d96bf2d5ed9745a1cd991abf742e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coins: 0
-  CoinsText: {fileID: 0}
---- !u!4 &1729700637
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729700635}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 719.4031, y: 314.93362, z: -3.4821208}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  coins: 100
+  coinsText: {fileID: 362170020}
+  itemButtons:
+  - {fileID: 323138497}
+  - {fileID: 741764048}
+  - {fileID: 1342852302}
+  - {fileID: 240151099}
+  - {fileID: 1561363227}
+  - {fileID: 2141892531}
+  - {fileID: 656481536}
+  - {fileID: 943160822}
+  itemPrices: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!1 &1790622807
 GameObject:
   m_ObjectHideFlags: 0
@@ -3635,7 +3488,6 @@ GameObject:
   - component: {fileID: 2141892533}
   - component: {fileID: 2141892532}
   - component: {fileID: 2141892531}
-  - component: {fileID: 2141892530}
   m_Layer: 5
   m_Name: Button (5)
   m_TagString: Untagged
@@ -3664,21 +3516,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2141892530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141892528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774c3a9fa6efee84fb154981308348af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemID: 6
-  PriceText: {fileID: 1204259920}
-  ShopManager: {fileID: 1588891344}
 --- !u!114 &2141892531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3783,4 +3620,3 @@ SceneRoots:
   - {fileID: 2068209219}
   - {fileID: 1378143193}
   - {fileID: 1588891345}
-  - {fileID: 1729700637}
