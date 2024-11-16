@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash;
     private bool isDashing = false;
 
-    private float dashingPower = 2f;
+    private float dashingPower = 1.5f;
     public Animator anim;
 
 
