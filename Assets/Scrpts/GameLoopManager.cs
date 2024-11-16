@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameLoopManager : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class GameLoopManager : MonoBehaviour
     private bool p1ready = false;
     private bool p2ready = false;
     private bool IsCountdowning = false;
+    private int p1SelectedIndex = 0, p2SelectedIndex = 0;
+
     public Canvas GameInfoCanvas;
 
     //references
@@ -39,6 +42,9 @@ public class GameLoopManager : MonoBehaviour
     [SerializeField] private cameraManager camMan1, camMan2;
     [SerializeField] private Camera buildCam;
     [SerializeField] private GameObject pop1, pop2;
+    [SerializeField] private Image[] p1Images, p2Images;
+    [SerializeField] private Color disabledColor, defaultColor;
+    [SerializeField] private GameObject shop;
 
     private void Awake()
     {
@@ -63,10 +69,20 @@ public class GameLoopManager : MonoBehaviour
 
         StartCoroutine(Textflash());
         GameInfoCanvas.gameObject.SetActive(false);
-}
 
+        foreach(Image i in p1Images)
+        {
+            i.color = defaultColor;
+            i.GetComponent<ItemInfo>().selected.SetActive(false);
+        }
 
-    [ContextMenu("Start")]
+        foreach (Image i in p2Images)
+        {
+            i.color = defaultColor;
+            i.GetComponent<ItemInfo>().selected.SetActive(false);
+        }
+    }
+
 
     private IEnumerator Countdown()
     {
@@ -177,6 +193,13 @@ public class GameLoopManager : MonoBehaviour
         isGameStarted = false;
     }
 
+    public void ResetPlayer(GameObject player)
+    {
+        if (player.name == "p1")
+            p1.transform.position = p1start.transform.position;
+        else
+            p2.transform.position = p2start.transform.position;
+    }
 
     private void Update()
     {
@@ -216,11 +239,95 @@ public class GameLoopManager : MonoBehaviour
 
         if(!isRun)
         {
-            if(b1 != null && b2 != null && !b1.GetComponent<ObstacleMovement>().enabled && !b2.GetComponent<ObstacleMovement>().enabled)
+            //Gracz 1 wybieranie itemu
+            if (b1 == null)
             {
-                StartCoroutine(ChangeMode());
-                b1 = null;
-                b2 = null;
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    p1Images[p1SelectedIndex].GetComponent<ItemInfo>().selected.SetActive(false);
+                    p1SelectedIndex++;
+
+                    if (p1SelectedIndex > p1Images.Length - 1)
+                        p1SelectedIndex = 0;
+
+                    p1Images[p1SelectedIndex].GetComponent<ItemInfo>().selected.SetActive(true);
+                }
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    p1Images[p1SelectedIndex].GetComponent<ItemInfo>().selected.SetActive(false);
+                    p1SelectedIndex--;
+
+                    if (p1SelectedIndex < 0)
+                        p1SelectedIndex = p1Images.Length - 1;
+
+                    p1Images[p1SelectedIndex].GetComponent<ItemInfo>().selected.SetActive(true);
+                }
+                if(Input.GetKeyDown(KeyCode.LeftShift) && player1Cash >= p1Images[p1SelectedIndex].GetComponent<ItemInfo>().price)
+                {
+                    b1 = Instantiate(p1Images[p1SelectedIndex].GetComponent<ItemInfo>().obstaclePrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                    b1.GetComponent<ObstacleMovement>().isPlayerOne = true;
+                    b1.transform.position = p1build.transform.position;
+                    CheckForBlockedItems();
+                }
+            }
+
+            //Gracz 2 wybieranie itemu
+            if (b2 == null)
+            {
+                if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    p2Images[p2SelectedIndex].GetComponent<ItemInfo>().selected.SetActive(false);
+                    p2SelectedIndex++;
+
+                    if (p2SelectedIndex > p2Images.Length - 1)
+                        p2SelectedIndex = 0;
+
+                    p2Images[p2SelectedIndex].GetComponent<ItemInfo>().selected.SetActive(true);
+                }
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    p2Images[p2SelectedIndex].GetComponent<ItemInfo>().selected.SetActive(false);
+                    p2SelectedIndex--;
+
+                    if (p2SelectedIndex < 0)
+                        p2SelectedIndex = p2Images.Length - 1;
+
+                    p2Images[p2SelectedIndex].GetComponent<ItemInfo>().selected.SetActive(true);
+                }
+                if (Input.GetKeyDown(KeyCode.RightShift) && player2Cash >= p2Images[p2SelectedIndex].GetComponent<ItemInfo>().price)
+                {
+                    b2 = Instantiate(p2Images[p2SelectedIndex].GetComponent<ItemInfo>().obstaclePrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                    b2.GetComponent<ObstacleMovement>().isPlayerOne = false;
+                    b2.transform.position = p2build.transform.position;
+                    CheckForBlockedItems();
+                }
+            }
+        }
+    }
+
+    private void CheckForBlockedItems()
+    {
+        foreach (Image i in p1Images)
+        {
+            if (i.GetComponent<ItemInfo>().price > player1Cash)
+            {
+                i.color = disabledColor;
+            }
+            else
+            {
+                i.color = defaultColor;
+            }
+        }
+
+        foreach (Image i in p2Images)
+        {
+            if (i.GetComponent<ItemInfo>().price > player2Cash)
+            {
+                i.color = disabledColor;
+            }
+            else
+            {
+                i.color = defaultColor;
             }
         }
     }
@@ -246,6 +353,8 @@ public class GameLoopManager : MonoBehaviour
             buildCam.gameObject.SetActive(false);
             pop1.SetActive(false);
             pop2.SetActive(false);
+            shop.SetActive(false);
+
             modeText.text = "RUN!";
 
             timeToChange = phase1Time;
@@ -261,11 +370,17 @@ public class GameLoopManager : MonoBehaviour
         }
         else
         {
+            CheckForBlockedItems();
+
             camMan1.gameObject.SetActive(false);
             camMan2.gameObject.SetActive(false);
             buildCam.gameObject.SetActive(true);
             pop1.SetActive(true);
             pop2.SetActive(true);
+            shop.SetActive(true);
+            p1Images[p1SelectedIndex].GetComponent<ItemInfo>().selected.SetActive(true);
+            p2Images[p2SelectedIndex].GetComponent<ItemInfo>().selected.SetActive(true);
+
             modeText.text = "BUILD!";
 
             p1.transform.position = p1start.transform.position;
@@ -277,18 +392,6 @@ public class GameLoopManager : MonoBehaviour
             //show buy canva          
             yield return StartCoroutine(ShowCanvas(BuildCanvas));
             //hide buy canva
-
-            b1 = budowanie.Buduj();
-            b2 = budowanie.Buduj();
-
-            b1.GetComponent<ObstacleMovement>().isPlayerOne = true;
-            b2.GetComponent<ObstacleMovement>().isPlayerOne = false;
-
-            b1.transform.position = p1build.transform.position;
-            b2.transform.position = p2build.transform.position;
-
-            camMan1.target = b1.transform;
-            camMan2.target = b2.transform;
         }
 
         yield return null;
@@ -307,5 +410,23 @@ public class GameLoopManager : MonoBehaviour
         }
         Canva.SetActive(false);
         bgCanva.SetActive(false);
+    }
+
+    public void BuyB(bool b1t)
+    {
+        if (b1t)
+        {
+            b1 = null;
+            player1Cash -= p1Images[p1SelectedIndex].GetComponent<ItemInfo>().price;
+            p1Points.text = "Points: " + player1Wins + "\ncash: " + player1Cash;
+            CheckForBlockedItems();
+        }
+        else
+        {
+            b2 = null;
+            player2Cash -= p2Images[p2SelectedIndex].GetComponent<ItemInfo>().price;
+            p2Points.text = "Points: " + player2Wins + "\ncash: " + player2Cash;
+            CheckForBlockedItems();
+        }
     }
 }
